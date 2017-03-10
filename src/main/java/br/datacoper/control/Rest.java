@@ -36,7 +36,7 @@ public class Rest {
 					.post(Entity.entity(jsonInString.toString(), MediaType.APPLICATION_JSON));
 
 			if (retorno.getStatus() == 200){
-				File file = new File(supplyAux.getArquivo());
+				File file = new File("/home/dread/workspace/BombMonitor/src/main/resources/monitorar/" + supplyAux.getArquivo());
 				file.renameTo(
 						new File("/home/dread/workspace/BombMonitor/src/main/resources/importados/ok_" + file.getName()));
 				break;
