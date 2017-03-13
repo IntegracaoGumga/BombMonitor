@@ -20,31 +20,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.PropertyConfigurator;
 
 public class Configuracoes {
 
-	private static Configuracoes conf;
-	public static final String TRUE = "SIM";
-	public static final String FALSE = "SIM";
+	private static Configuracoes config;
 	public static final String DIRETORIORAIZ = System.getProperty("user.dir");
 	public static final String DIRETORIOCONFIGURACOES = DIRETORIORAIZ + "/config/";
-	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "/imagens/";
+	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "/img/";
 	public static final String ARQUIVODECONFIGURACOES = "config.properties";
 	public static final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
+	
+	public static final String TRUE = "SIM";
+	public static final String FALSE = "NAO";
 
-	public static final String PARAM_PORTASERVIDOR = "PORTA_SERVIDOR";
-	public static final String PARAM_DIRETORIOARQUIVOS = "DIR_ARQUIVOS";
-	public static final String PARAM_MOVERARQUIVOTRANSFERIDO = "MOVER_ARQUIVO_TRANSFERIDO";
-	public static final String PARAM_DIRETORIODESTINOARQUIVO = "DIRETORIO_DESTINO_ARQUIVO";
-	public static final String PARAM_NOME_ARQUIVO = "NOME_ARQUIVO";
-	public static final String PARAM_FILTROEXTENSAO = "FILTRO_EXTENSAO";
-	public static final String PARAM_FILTROPREFIXO = "FILTRO_PREFIXO";
+	public static final String PARAM_GERA_LOG = "GERA_LOG";
 	public static final String PARAM_DEBUG = "DEBUG";
-	public static final String PARAM_GERALOG = "GERA_LOG";
-	public static final String PARAM_PORTA_SERIAL = "PORTA_SERIAL";
-	public static final String PARAM_BAUND_RATE = "BAUND_RATE";
-	public static final String PARAM_UNIDADE = "UNIDADE";
+	public static final String PARAM_MOVER_ARQUIVO_IMPORTADO = "MOVER_ARQUIVO_TRANSFERIDO";
+	public static final String PARAM_FILTRO_PREFIXO = "FILTRO_PREFIXO";
+	public static final String PARAM_FILTRO_EXTENSAO = "FILTRO_EXTENSAO";
+	public static final String PARAM_DIRETORIO_IMAGEM = "DIRETORIO_IMAGEM";
+	public static final String PARAM_DIRETORIO_IMPORTACAO = "DIRETORIO_IMPORTACAO";
+	public static final String PARAM_DIRETORIO_IMPORTADOS = "DIRETORIO_IMPORTADOS";
+	public static final String PARAM_DIRETORIO_LOG = "DIRETORIO_LOG";
 
 	private Map<String, Object> mapaParametros;
 	private List<String> listaParametros;
@@ -52,18 +53,15 @@ public class Configuracoes {
 	public Configuracoes() {
 		listaParametros = new ArrayList<String>();
 		mapaParametros = new HashMap<>();
-		listaParametros.add(PARAM_PORTASERVIDOR);
-		listaParametros.add(PARAM_DIRETORIOARQUIVOS);
-		listaParametros.add(PARAM_MOVERARQUIVOTRANSFERIDO);
-		listaParametros.add(PARAM_DIRETORIODESTINOARQUIVO);
+		listaParametros.add(PARAM_GERA_LOG);
 		listaParametros.add(PARAM_DEBUG);
-		listaParametros.add(PARAM_GERALOG);
-		listaParametros.add(PARAM_FILTROEXTENSAO);
-		listaParametros.add(PARAM_FILTROPREFIXO);
-		listaParametros.add(PARAM_PORTA_SERIAL);
-		listaParametros.add(PARAM_BAUND_RATE);
-		listaParametros.add(PARAM_NOME_ARQUIVO);
-		listaParametros.add(PARAM_UNIDADE);
+		listaParametros.add(PARAM_MOVER_ARQUIVO_IMPORTADO);
+		listaParametros.add(PARAM_FILTRO_PREFIXO);
+		listaParametros.add(PARAM_FILTRO_EXTENSAO);
+		listaParametros.add(PARAM_DIRETORIO_IMAGEM);
+		listaParametros.add(PARAM_DIRETORIO_IMPORTACAO);
+		listaParametros.add(PARAM_DIRETORIO_IMPORTADOS);
+		listaParametros.add(PARAM_DIRETORIO_LOG);
 
 		carregaParametros();
 		String log4jConfPath = DIRETORIOCONFIGURACOES + "log4j.properties";
@@ -71,10 +69,10 @@ public class Configuracoes {
 	}
 
 	public static Configuracoes getInstance() {
-		if (conf == null) {
-			conf = new Configuracoes();
+		if (config == null) {
+			config = new Configuracoes();
 		}
-		return conf;
+		return config;
 	}
 
 	public void carregaParametros() {
@@ -91,7 +89,7 @@ public class Configuracoes {
 					mapaParametros.put(param, "");
 			}
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro ao realizar a leitura de parametros!");
 		}
 	}
 

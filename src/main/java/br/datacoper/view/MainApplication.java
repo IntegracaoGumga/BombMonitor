@@ -17,12 +17,13 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JOptionPane;
 
+import br.datacoper.model.Configuracoes;
 import br.datacoper.model.Monitor;
 
 /**
  * @author dread
  *
- *         Main executor class
+ *         Execuçao da aplicacao
  * 
  */
 public class MainApplication {
@@ -35,24 +36,8 @@ public class MainApplication {
 		final TrayIcon trayIcon;
 
 		SystemTray tray = SystemTray.getSystemTray();
-		Image image = Toolkit.getDefaultToolkit().getImage("./src/main/resources/img/icon.png");
-
-		MouseListener mouseListener = new MouseListener() {
-			public void mouseClicked(MouseEvent e) {
-			}
-
-			public void mouseEntered(MouseEvent e) {
-			}
-
-			public void mouseExited(MouseEvent e) {
-			}
-
-			public void mousePressed(MouseEvent e) {
-			}
-
-			public void mouseReleased(MouseEvent e) {
-			}
-		};
+		Image image = Toolkit.getDefaultToolkit()
+				.getImage(Configuracoes.getInstance().getParam(Configuracoes.PARAM_DIRETORIO_IMAGEM));
 
 		ActionListener exitListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,9 +52,9 @@ public class MainApplication {
 			}
 		};
 
-		PopupMenu popup = new PopupMenu("Menu de Opções");
+		PopupMenu popup = new PopupMenu("Menu de Opcoes");
 
-		MenuItem mostramsg = new MenuItem("Configurações");
+		MenuItem mostramsg = new MenuItem("Configuracoes");
 		MenuItem defaultItem = new MenuItem("Sair");
 
 		mostramsg.addActionListener(configListener);
@@ -89,7 +74,6 @@ public class MainApplication {
 		trayIcon.setImageAutoSize(true);
 
 		trayIcon.addActionListener(actionListener);
-		trayIcon.addMouseListener(mouseListener);
 
 		try {
 			tray.add(trayIcon);

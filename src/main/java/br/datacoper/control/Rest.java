@@ -15,8 +15,6 @@ import br.datacoper.model.Supply;
 
 public class Rest {
 
-	// private final static String APPLICATION_JSON = "application/json";
-
 	public static void postSupply(final Supply supplyAux) {
 		ObjectMapper mapper = new ObjectMapper();
 

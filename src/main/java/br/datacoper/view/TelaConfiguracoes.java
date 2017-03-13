@@ -20,253 +20,159 @@ import javax.swing.JTabbedPane;
 
 import br.datacoper.model.Configuracoes;
 
-
 /**
  *
- * @author daniel.tokarski
+ * @author Dread
  */
 public class TelaConfiguracoes extends javax.swing.JFrame {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     *
-     */
-    public static final int LARGURA = 600;
+	public static final int LARGURA = 600;
+	public static final int ALTURA = 450;
 
-    /**
-     *
-     */
-    public static final int ALTURA = 450;
-    
-    JPanel jpSerial = new JPanel();
-    JPanel jpSocket = new JPanel();
-    JPanel jpProgramador = new JPanel();
-    
-    JTabbedPane jtpTabs = new JTabbedPane();
-    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+	private static Configuracoes config = Configuracoes.getInstance();
 
-    private static Configuracoes conf = Configuracoes.getInstance();
-    private MyTextField mtf_portaservidor = new MyTextField(LARGURA, "PORTA SERVIDOR");
-    private MyTextField mtf_diretorioArquivos = new MyTextField(LARGURA, "DIRETORIO DOS ARQUIVOS");
-    private MyTextField mtf_filtroExtensao = new MyTextField(LARGURA, "EXTENSAO DOS ARQUIVOS");
-    private MyTextField mtf_filtroPrefixo = new MyTextField(LARGURA, "PREFIXO DOS ARQUIVOS");
-    private MyTextField mtf_diretorioDestino = new MyTextField(LARGURA, "DIRETORIO DESTINO");
-    private MyTextField mtf_baund_rate       = new MyTextField(LARGURA,"BAUND RATE");
-    private MyTextField mtf_porta_serial     = new MyTextField(LARGURA,"PORTA SERIAL");
-    private MyTextField mtf_nome_arquivo     = new MyTextField(LARGURA,"NOME ARQUIVO");
-    private MyTextField mtf_unidade          = new MyTextField(LARGURA,"UNIDADE(FILIAL)");
-    
-    
-    private MyCheckBox mcb_moveArquivos = new MyCheckBox(LARGURA, "MOVE ARQUIVOS", "SIM");
-    private MyCheckBox mcb_debug = new MyCheckBox(LARGURA, "DEBUG", "SIM");
-    private MyCheckBox mcb_geraLog = new MyCheckBox(LARGURA, "GERA LOG", "SIM");
-    private JButton btSalvarSocket = new JButton("Salvar");
-    private JButton btSalvarSerial = new JButton("Salvar");
-    
-    /**
-     *
-     */
-    public TelaConfiguracoes() {
-        super("CONFIGURAÇÕES - MOTOMCO VERSAO 3.0");
-        setSize(LARGURA, ALTURA); //ponha aqui suas medidas
-        setLocation((tela.width - this.getSize().width) / 2,
-                (tela.height - this.getSize().height) / 2);
-        mcb_moveArquivos.getCb().setSelected(false);
-        
-        btSalvarSocket.addActionListener(actionSalvar());
-        btSalvarSerial.addActionListener(actionSalvar());
-        
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setSize(LARGURA, ALTURA);
-        this.setResizable(false);
-        
-        jpSocket.setSize(LARGURA,ALTURA);
-        jpSocket.setLayout(new GridLayout(0, 1));
-        jpSerial.setSize(LARGURA,ALTURA);
-        jpSerial.setLayout(new GridLayout(9, 1));
-        
-        this.setLayout(new GridLayout(0, 1));
-        carregaParametros();
-        addComponentes();
-    }
+	JPanel jpTelaConfiguracoes = new JPanel();
 
-    /**
-     *
-     */
-    public void addComponentes() {
-        /*Socket*/
-        jpSocket.add(mtf_portaservidor);
-        jpSocket.add(mtf_diretorioArquivos);
-        jpSocket.add(mtf_filtroExtensao);
-        jpSocket.add(mtf_filtroPrefixo);
-        jpSocket.add(mcb_moveArquivos);
-        jpSocket.add(mtf_diretorioDestino);
-        jpSocket.add(mcb_debug);
-        jpSocket.add(mcb_geraLog);
-        jpSocket.add(btSalvarSocket);
-        
-        /*Serial*/
-        jpSerial.add(mtf_unidade);
-        jpSerial.add(mtf_nome_arquivo);
-        jpSerial.add(mtf_porta_serial);
-        jpSerial.add(mtf_baund_rate);
-        jpSerial.add(btSalvarSerial);
-        jtpTabs.addTab("SERVIDOR SOCKET", jpSocket);
-        jtpTabs.addTab("PORTA SERIAL"   , jpSerial);
-        
-        this.getContentPane().add(jtpTabs, BorderLayout.CENTER);
-       
-    }
+	Dimension dimensaoTela = Toolkit.getDefaultToolkit().getScreenSize();
 
-    /**
-     *
-     */
-    public void carregaParametros() {
-        
-        mcb_debug.getCb().setSelected(false);
-        mcb_geraLog.getCb().setSelected(false);
-        mcb_moveArquivos.getCb().setSelected(false);
-        mtf_portaservidor.getTf().setText(conf.getParam(Configuracoes.PARAM_PORTASERVIDOR));
-        mtf_diretorioArquivos.getTf().setText(conf.getParam(Configuracoes.PARAM_DIRETORIOARQUIVOS));
-        mtf_filtroExtensao.getTf().setText(conf.getParam(Configuracoes.PARAM_FILTROEXTENSAO));
-        mtf_filtroPrefixo.getTf().setText(conf.getParam(Configuracoes.PARAM_FILTROPREFIXO));
-        mtf_diretorioDestino.getTf().setText(conf.getParam(Configuracoes.PARAM_DIRETORIODESTINOARQUIVO));
-        mcb_moveArquivos.setObjetosDesativar(new Object[]{mtf_diretorioDestino});
-        
-        mtf_baund_rate.getTf().setText(conf.getParam(Configuracoes.PARAM_BAUND_RATE));
-        mtf_porta_serial.getTf().setText(conf.getParam(Configuracoes.PARAM_PORTA_SERIAL));
-        mtf_nome_arquivo.getTf().setText(conf.getParam(Configuracoes.PARAM_NOME_ARQUIVO));
-        mtf_unidade.getTf().setText(conf.getParam(Configuracoes.PARAM_UNIDADE));
-        
-        if (conf.getParam(Configuracoes.PARAM_MOVERARQUIVOTRANSFERIDO).equals(Configuracoes.TRUE)) {
-            mcb_moveArquivos.getCb().setSelected(true);
-        }
-        if (conf.getParam(Configuracoes.PARAM_GERALOG).equals(Configuracoes.TRUE)) {
-            mcb_geraLog.getCb().setSelected(true);
-        }
-        if (conf.getParam(Configuracoes.PARAM_DEBUG).equals(Configuracoes.TRUE)) {
-            mcb_debug.getCb().setSelected(true);
-        }
-    }
+	private MyTextField mtf_filtro_prefixo = new MyTextField(LARGURA, "FILTRAR PREFIXO");
+	private MyTextField mtf_filtro_extensao = new MyTextField(LARGURA, "FILTRAR EXTENSAO");
+	private MyTextField mtf_diretorio_imagem = new MyTextField(LARGURA, "IMAGEM");
+	private MyTextField mtf_diretorio_importacao = new MyTextField(LARGURA, "DIRETORIO IMPORTACAO");
+	private MyTextField mtf_diretorio_importados = new MyTextField(LARGURA, "DIRETORIO DESTINO");
+	private MyTextField mtf_diretorio_log = new MyTextField(LARGURA, "DIRETORIO LOG");
 
-    /**
-     *
-     */
-    public void salvar() {
-        /*Socket*/
-        conf.setParam(Configuracoes.PARAM_PORTASERVIDOR, mtf_portaservidor.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_DIRETORIOARQUIVOS, mtf_diretorioArquivos.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_FILTROEXTENSAO, mtf_filtroExtensao.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_FILTROPREFIXO, mtf_filtroPrefixo.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_DIRETORIODESTINOARQUIVO, mtf_diretorioDestino.getTf().getText());
-        
-        /*Serial*/
-        conf.setParam(Configuracoes.PARAM_BAUND_RATE,mtf_baund_rate.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_PORTA_SERIAL,mtf_porta_serial.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_NOME_ARQUIVO,mtf_nome_arquivo.getTf().getText());
-        conf.setParam(Configuracoes.PARAM_UNIDADE,mtf_unidade.getTf().getText());
-        if (mtf_unidade.getTf().getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Favor cadastrar o parametro UNIDADE(FILIAL)!","",0);
-            System.exit(0);
-        }
-        
-        if (mcb_moveArquivos.getCb().isSelected()) {
-            conf.setParam(Configuracoes.PARAM_MOVERARQUIVOTRANSFERIDO, Configuracoes.TRUE);
+	private MyCheckBox mcb_gera_log = new MyCheckBox(LARGURA, "GERAR LOG", "");
+	private MyCheckBox mcb_debug = new MyCheckBox(LARGURA, "DEBUG", "");
+	private MyCheckBox mcb_mover_arquivo_importado = new MyCheckBox(LARGURA, "MOVER ARQUIVOS TRANSFERIDOS", "");
 
-        } else {
-            conf.setParam(Configuracoes.PARAM_MOVERARQUIVOTRANSFERIDO, "");
-        }
-        if (mcb_geraLog.getCb().isSelected()) {
-            conf.setParam(Configuracoes.PARAM_GERALOG, Configuracoes.TRUE);
-        } else {
-            conf.setParam(Configuracoes.PARAM_GERALOG, "");
-        }
-        if (mcb_debug.getCb().isSelected()) {
-            conf.setParam(Configuracoes.PARAM_DEBUG, Configuracoes.TRUE);
-        } else {
-            conf.setParam(Configuracoes.PARAM_DEBUG, "");
-        }
-        conf.gravaParametros();
-        JOptionPane.showMessageDialog(null, "SALVO COM SECESSO!" + "\n" + "FAVOR REINICIAR A APLICACAO PARA QUE OS PARAMETROS SEJAM CARREGADOS NOVAMENTE!");
-    }
+	private JButton bntSalvar = new JButton("Salvar");
 
-    /**
-     *
-     * @return
-     */
-    public ActionListener actionSalvar() {
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                salvar();
+	/**
+	 *
+	 */
+	public TelaConfiguracoes() {
+		super("CONFIGURAÇÕES - MOTOMCO VERSAO 3.0");
+		setSize(LARGURA, ALTURA);
+		setLocation((dimensaoTela.width - this.getSize().width) / 2, (dimensaoTela.height - this.getSize().height) / 2);
+		mcb_mover_arquivo_importado.getCb().setSelected(false);
 
-            }
-        };
-    }
+		bntSalvar.addActionListener(actionSalvar());
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setSize(LARGURA, ALTURA);
+		this.setResizable(false);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		jpTelaConfiguracoes.setSize(LARGURA, ALTURA);
+		jpTelaConfiguracoes.setLayout(new GridLayout(0, 1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+		this.setLayout(new GridLayout(0, 1));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+		carregarParametros();
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
- 
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaConfiguracoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-         
-        //</editor-fold>
+		adicionarComponentes();
+	}
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaConfiguracoes().setVisible(true);
-            }
-        });
-    }
+	/**
+	 *
+	 */
+	public void adicionarComponentes() {
+		/* Socket */
+		jpTelaConfiguracoes.add(mtf_filtro_prefixo);
+		jpTelaConfiguracoes.add(mtf_filtro_extensao);
+		jpTelaConfiguracoes.add(mtf_diretorio_imagem);
+		jpTelaConfiguracoes.add(mtf_diretorio_importacao);
+		jpTelaConfiguracoes.add(mtf_diretorio_importados);
+		jpTelaConfiguracoes.add(mtf_diretorio_log);
+		jpTelaConfiguracoes.add(mcb_gera_log);
+		jpTelaConfiguracoes.add(mcb_debug);
+		jpTelaConfiguracoes.add(mcb_mover_arquivo_importado);
+		jpTelaConfiguracoes.add(bntSalvar);
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
+		this.getContentPane().add(jpTelaConfiguracoes, BorderLayout.CENTER);
+
+	}
+
+	/**
+	 *
+	 */
+	public void carregarParametros() {
+
+		mcb_debug.getCb().setSelected(false);
+		mcb_gera_log.getCb().setSelected(false);
+		mcb_mover_arquivo_importado.getCb().setSelected(false);
+
+		mtf_diretorio_log.getTf().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_LOG));
+		mtf_diretorio_importados.getTf().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS));
+		mtf_diretorio_importacao.getTf().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO));
+		mtf_diretorio_imagem.getTf().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMAGEM));
+		mtf_filtro_extensao.getTf().setText(config.getParam(Configuracoes.PARAM_FILTRO_EXTENSAO));
+		mtf_filtro_prefixo.getTf().setText(config.getParam(Configuracoes.PARAM_FILTRO_PREFIXO));
+
+		if (config.getParam(Configuracoes.PARAM_MOVER_ARQUIVO_IMPORTADO).equals(Configuracoes.TRUE)) {
+			mcb_mover_arquivo_importado.getCb().setSelected(true);
+		}
+		if (config.getParam(Configuracoes.PARAM_GERA_LOG).equals(Configuracoes.TRUE)) {
+			mcb_gera_log.getCb().setSelected(true);
+		}
+		if (config.getParam(Configuracoes.PARAM_DEBUG).equals(Configuracoes.TRUE)) {
+			mcb_debug.getCb().setSelected(true);
+		}
+	}
+
+	/**
+	 * Salva os parametros da aplicacao
+	 * 
+	 * @return True se os parametros forem salvos corretamente, false se houver
+	 *         algum erro.
+	 */
+	public void salvar() {
+
+		config.setParam(Configuracoes.PARAM_DIRETORIO_LOG, mtf_diretorio_log.getTf().getText());
+		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS, mtf_diretorio_importados.getTf().getText());
+		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO, mtf_diretorio_importacao.getTf().getText());
+		config.setParam(Configuracoes.PARAM_DIRETORIO_IMAGEM, mtf_diretorio_imagem.getTf().getText());
+		config.setParam(Configuracoes.PARAM_FILTRO_EXTENSAO, mtf_filtro_extensao.getTf().getText());
+		config.setParam(Configuracoes.PARAM_FILTRO_PREFIXO, mtf_filtro_prefixo.getTf().getText());
+
+		if (mcb_mover_arquivo_importado.getCb().isSelected()) {
+			config.setParam(Configuracoes.PARAM_MOVER_ARQUIVO_IMPORTADO, Configuracoes.TRUE);
+		} else {
+			config.setParam(Configuracoes.PARAM_MOVER_ARQUIVO_IMPORTADO, Configuracoes.FALSE);
+		}
+
+		if (mcb_gera_log.getCb().isSelected()) {
+			config.setParam(Configuracoes.PARAM_GERA_LOG, Configuracoes.TRUE);
+		} else {
+			config.setParam(Configuracoes.PARAM_GERA_LOG, Configuracoes.FALSE);
+		}
+
+		if (mcb_debug.getCb().isSelected()) {
+			config.setParam(Configuracoes.PARAM_DEBUG, Configuracoes.TRUE);
+		} else {
+			config.setParam(Configuracoes.PARAM_DEBUG, Configuracoes.FALSE);
+		}
+
+		config.gravaParametros();
+
+		JOptionPane.showMessageDialog(null, "SALVO COM SECESSO!" + "\n"
+				+ "A APLICACAO DEVE SER REINICIADA PARA QUE OS PARAMETROS SEJAM CARREGADOS NOVAMENTE!");
+	}
+
+	/**
+	 * Adiciona a açao salvar ao botão
+	 * 
+	 * @return ActionListener para o botao salvar
+	 */
+	public ActionListener actionSalvar() {
+		return new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				salvar();
+
+			}
+		};
+	}
 }
