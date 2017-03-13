@@ -1,7 +1,6 @@
-/**
- * 
- */
 package br.datacoper.control;
+
+import org.apache.log4j.Logger;
 
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
@@ -17,11 +16,19 @@ public class ConexaoBanco {
 	private ObjectContainer database;
 
 	public ConexaoBanco() {
-		this.database = Db4o.openFile("./src/main/resources/database/abastecimentoDB.yap");
+		try {
+			Logger logger = Logger.getLogger("br.datacoper.control.ConexaoBanco");
+			logger.info("Iniciando conexao com o banco");
+
+			this.database = Db4o.openFile("./database/abastecimentoDB.yap");
+		} catch (Exception e) {
+			Logger logger = Logger.getLogger("br.datacoper.control.ConexaoBanco");
+			logger.error("Erro na conexao com o banco " + e.getMessage());
+		}
 	}
 
 	/**
-	 * @return the conexaoBanco
+	 * @return Conexao com o banco
 	 */
 	public static ConexaoBanco getConexaoBanco() {
 		if (conexaoBanco == null) {
@@ -31,7 +38,7 @@ public class ConexaoBanco {
 	}
 
 	/**
-	 * @return the database
+	 * @return database
 	 */
 	public ObjectContainer getDatabase() {
 		return database;

@@ -8,24 +8,31 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.datacoper.model.Supply;
+import br.datacoper.model.Configuracoes;
+import br.datacoper.model.Abastecida;
 
 public class Rest {
 
-	public static void postSupply(final Supply supplyAux) {
+	public static void enviarAbastecida(final Abastecida supplyAux) {
 		ObjectMapper mapper = new ObjectMapper();
+		Logger logger = Logger.getLogger("br.datacoper.control.Rest");
 
 		String jsonInString = null;
 		try {
+			logger.info("Conversao do objeto para JSON");
 			jsonInString = mapper.writeValueAsString(supplyAux);
 		} catch (JsonProcessingException e) {
-			System.err.println("Erro na conversao do objeto para JSON");
+			logger.error("Erro na conversao do objeto para JSON");
 		}
 
-		String url = "http://10.150.61.20:8080/IntegradorProgress/rest/Dread";
+		String url = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_URL_POST);
+		String origem = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO);
+		String destino = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS);
 
 		Client client = ClientBuilder.newClient();
 
@@ -34,13 +41,17 @@ public class Rest {
 					.post(Entity.entity(jsonInString.toString(), MediaType.APPLICATION_JSON));
 
 			if (retorno.getStatus() == 200){
-				File file = new File("/home/dread/workspace/BombMonitor/src/main/resources/monitorar/" + supplyAux.getArquivo());
-				file.renameTo(
-						new File("/home/dread/workspace/BombMonitor/src/main/resources/importados/ok_" + file.getName()));
+				String fileOrigem = origem + supplyAux.getArquivo();
+				String fileDestino = destino + "ok_" + supplyAux.getArquivo();
+
+				File file = new File(fileOrigem);
+				file.renameTo(new File(fileDestino));
+
+				logger.info(String.format("Arquivo renomeado de %s para %s", fileOrigem, fileDestino));
 				break;
 			}
 			if (i == 3){		
-				System.err.println(String.format("Erro no envio do JSON - %d", supplyAux.getNumeroBico()));
+				logger.error(String.format("Erro no envio do JSON - %s", supplyAux.getArquivo()));
 			}
 		}
 

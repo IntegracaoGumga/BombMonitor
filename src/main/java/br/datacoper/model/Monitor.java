@@ -1,6 +1,5 @@
 package br.datacoper.model;
 
-import java.awt.PageAttributes.MediaType;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
@@ -10,10 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.*;
+import org.apache.log4j.Logger;
 
 import br.datacoper.control.ConexaoBanco;
 import br.datacoper.control.Rest;
@@ -30,7 +26,9 @@ import br.datacoper.control.Rest;
 public class Monitor implements Runnable {
 
 	private Thread threadMonitor;
-	private String directory;
+	private String diretorio;
+
+	Logger logger = Logger.getLogger("br.datacoper.model.Monitor");
 
 	/**
 	 * Construtor
@@ -43,9 +41,7 @@ public class Monitor implements Runnable {
 	 * Inicia a execução da thread
 	 */
 	private void init() {
-
-		/* Parametro */
-		setDirectory("/home/dread/workspace/BombMonitor/src/main/resources/monitorar/");
+		setDiretorio(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO));
 
 		this.threadMonitor = new Thread(this);
 		this.threadMonitor.start();
@@ -57,20 +53,26 @@ public class Monitor implements Runnable {
 	 * @param dir
 	 * 
 	 */
-	private void verifyDictory(final String dir) {
+	private void verificarDiretorio(final String dir) {
 		File diretorio = new File(dir);
 		File arquivos[] = diretorio.listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
-				return (pathname.getName().toLowerCase().startsWith("ab_")
-						&& pathname.getName().toLowerCase().endsWith(".txt"));
+				return (pathname.getName().toLowerCase().startsWith(
+						Configuracoes.getInstancia().getParam(Configuracoes.PARAM_FILTRO_PREFIXO).toLowerCase())
+						&& pathname.getName().toLowerCase().endsWith(Configuracoes.getInstancia()
+								.getParam(Configuracoes.PARAM_FILTRO_EXTENSAO).toLowerCase()));
 			}
 		});
 
-		for (int i = 0; i < arquivos.length; i++) {
-			File file = arquivos[i];
-			parseFileToSupply(file.getName());
+		try {
+			for (int i = 0; i < arquivos.length; i++) {
+				File file = arquivos[i];
+				logger.info(String.format("Arquivo encontrado: %s", file.getName()));
+				converterArquivoAbastecida(file.getName());
+			}
+		} catch (NullPointerException e) {
+			logger.error(String.format("Diretorio %s vazio!", dir));
 		}
-
 	}
 
 	/**
@@ -78,23 +80,41 @@ public class Monitor implements Runnable {
 	 * 
 	 * @param file
 	 */
-	private void parseFileToSupply(final String file) {
+	private void converterArquivoAbastecida(final String file) {
 		ConexaoBanco conexao = ConexaoBanco.getConexaoBanco();
 
-		List<String> listFile = readFile(file);
+		List<String> listFile = lerArquivo(file);
 		listFile.forEach(line -> {
-			Supply supplyAux = new Supply();
+			Abastecida supplyAux = new Abastecida();
 			supplyAux.setNumeroBico(Integer.parseInt(line.substring(0, 2))).setHoraAbastecimento(line.substring(20, 26))
 					.setDataAbastecimento(line.substring(12, 20))
 					.setQuantidade(Float.parseFloat(line.substring(32, 40)) / 1000)
 					.setEncerrante(Float.parseFloat(line.substring(49, 61)) / 1000)
-					.setFrentista(Integer.parseInt(line.substring(61, 65)))
-					.setArquivo(file);
+					.setFrentista(Integer.parseInt(line.substring(61, 65))).setArquivo(file);
 
+			logger.info(String.format("Salvando abastecida %s", supplyAux.getArquivo()));
 			conexao.getDatabase().set(supplyAux);
 
-			Rest.postSupply(supplyAux);
+			Rest.enviarAbastecida(supplyAux);
 		});
+	}
+
+	public List<String> lerArquivo(final String file) {
+		ArrayList<String> list = new ArrayList<>();
+
+		try (FileReader fileReader = new FileReader(new File(getDiretorio() + file));
+				BufferedReader br = new BufferedReader(fileReader)) {
+
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				list.add(line);
+			}
+		} catch (FileNotFoundException e) {
+			logger.error(String.format("Arquivo %s nao foi encontrado.", file));
+		} catch (IOException e) {
+			logger.error(String.format("Erro na leitura do arquivo %s.", file));
+		}
+		return list;
 	}
 
 	@Override
@@ -104,40 +124,25 @@ public class Monitor implements Runnable {
 		// thread que fica verificando a pasta
 		while (this.threadMonitor == currentThread) {
 
-			verifyDictory(getDirectory());
+			verificarDiretorio(getDiretorio());
 
 			try {
-				/* Parametro */
-				Thread.sleep(1000);
+				Thread.sleep(1000
+						* Integer.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TEMPO_MONITORAR)));
 			} catch (InterruptedException e) {
-
+				logger.error(String.format("Erro na execuçao da thread: %s", e.getMessage()));
+			} catch (NumberFormatException ex){
+				logger.error(String.format("Tempo invalido para a execucao da thread"));
 			}
+			
 		}
 	}
 
-	public List<String> readFile(final String file) {
-		ArrayList<String> list = new ArrayList<>();
-
-		try (FileReader fileReader = new FileReader(new File(getDirectory() + file));
-				BufferedReader br = new BufferedReader(fileReader)) {
-
-			String line = null;
-			while ((line = br.readLine()) != null) {
-				list.add(line);
-			}
-		} catch (FileNotFoundException e) {
-			System.err.println(String.format("Arquivo %s nao foi encontrado.", file));
-		} catch (IOException e) {
-			System.err.println(String.format("Erro na leitura do arquivo %s.", file));
-		}
-		return list;
+	public String getDiretorio() {
+		return diretorio.toLowerCase();
 	}
 
-	public String getDirectory() {
-		return directory;
-	}
-
-	public void setDirectory(final String diretorio) {
-		this.directory = diretorio;
+	public void setDiretorio(final String diretorio) {
+		this.diretorio = diretorio;
 	}
 }
