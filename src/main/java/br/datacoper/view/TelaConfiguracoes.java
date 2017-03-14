@@ -33,7 +33,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public static final int LARGURA = 600;
-	public static final int ALTURA = 450;
+	public static final int ALTURA = 400;
 
 	private static Configuracoes config = Configuracoes.getInstancia();
 
@@ -45,12 +45,10 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 	private MyTextField mtfFiltroPrefixo = new MyTextField(LARGURA, "FILTRAR PREFIXO");
 	private MyTextField mtfFiltroExtensao = new MyTextField(LARGURA, "FILTRAR EXTENSAO");
-	private MyTextField mtfIcone = new MyTextField(LARGURA, "IMAGEM");
 	private MyTextField mtfTempoMonitorar = new MyTextField(LARGURA, "TEMPO MONITORAMENTO (SEGUNDOS)");
 	private MyTextField mtfUrlPost = new MyTextField(LARGURA, "URL POST");
-	private MyTextField mtfDiretorioImportacao = new MyTextField(LARGURA, "DIRETORIO IMPORTACAO");
-	private MyTextField mtfDiretorioImportados = new MyTextField(LARGURA, "DIRETORIO DESTINO");
-	private MyFolderField mtfDiretorioLog = new MyFolderField(LARGURA, "DIRETORIO LOG");
+	private MyFolderField mffDiretorioImportacao = new MyFolderField(LARGURA, "DIRETORIO IMPORTACAO");
+	private MyFolderField mffDiretorioImportados = new MyFolderField(LARGURA, "DIRETORIO DESTINO");
 
 	private JButton bntSalvar = new JButton("Salvar");
 
@@ -89,10 +87,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		jpTelaConfiguracoes.add(mtfFiltroExtensao);
 		jpTelaConfiguracoes.add(mtfTempoMonitorar);
 		jpTelaConfiguracoes.add(mtfUrlPost);
-		jpTelaConfiguracoes.add(mtfIcone);
-		jpTelaConfiguracoes.add(mtfDiretorioImportacao);
-		jpTelaConfiguracoes.add(mtfDiretorioImportados);
-		jpTelaConfiguracoes.add(mtfDiretorioLog);
+		jpTelaConfiguracoes.add(mffDiretorioImportacao);
+		jpTelaConfiguracoes.add(mffDiretorioImportados);
 		jpTelaConfiguracoes.add(bntSalvar);
 
 		this.getContentPane().add(jpTelaConfiguracoes, BorderLayout.CENTER);
@@ -104,12 +100,10 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	public void carregarParametros() {
 		logger.info("Carregando Parametros TelaConfiguracoes");
 
-		mtfDiretorioLog.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_LOG));
-		mtfDiretorioImportados.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS));
-		mtfDiretorioImportacao.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO));
+		mffDiretorioImportados.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS));
+		mffDiretorioImportacao.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO));
 		mtfTempoMonitorar.getTextField().setText(config.getParam(Configuracoes.PARAM_TEMPO_MONITORAR));
 		mtfUrlPost.getTextField().setText(config.getParam(Configuracoes.PARAM_URL_POST));
-		mtfIcone.getTextField().setText(config.getParam(Configuracoes.PARAM_ICONE));
 		mtfFiltroExtensao.getTextField().setText(config.getParam(Configuracoes.PARAM_FILTRO_EXTENSAO));
 		mtfFiltroPrefixo.getTextField().setText(config.getParam(Configuracoes.PARAM_FILTRO_PREFIXO));
 
@@ -128,10 +122,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 			return;
 		}
 
-		config.setParam(Configuracoes.PARAM_DIRETORIO_LOG, mtfDiretorioLog.getTextField().getText());
-		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS, mtfDiretorioImportados.getTextField().getText());
-		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO, mtfDiretorioImportacao.getTextField().getText());
-		config.setParam(Configuracoes.PARAM_ICONE, mtfIcone.getTextField().getText());
+		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS, mffDiretorioImportados.getTextField().getText());
+		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO, mffDiretorioImportacao.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_URL_POST, mtfUrlPost.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_TEMPO_MONITORAR, mtfTempoMonitorar.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_FILTRO_EXTENSAO, mtfFiltroExtensao.getTextField().getText());
@@ -140,7 +132,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		logger.info("Salvando parametros");
 		config.gravarParametros();
 
-		JOptionPane.showMessageDialog(null, "SALVO COM SECESSO!" + "\n"
+		JOptionPane.showMessageDialog(null, "SALVO COM SUCESSO!" + "\n"
 				+ "A APLICACAO DEVE SER REINICIADA PARA QUE OS PARAMETROS SEJAM CARREGADOS NOVAMENTE!");
 		System.exit(0);
 	}
@@ -157,10 +149,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		String filtroExtensao = mtfFiltroExtensao.getTextField().getText();
 		String tempoMonitorar = mtfTempoMonitorar.getTextField().getText();
 		String urlPost = mtfUrlPost.getTextField().getText();
-		String icone = mtfIcone.getTextField().getText();
-		String diretorioImportacao = mtfDiretorioImportacao.getTextField().getText();
-		String diretorioImportados = mtfDiretorioImportados.getTextField().getText();
-		String diretorioLog = mtfDiretorioLog.getTextField().getText();
+		String diretorioImportacao = mffDiretorioImportacao.getTextField().getText();
+		String diretorioImportados = mffDiretorioImportados.getTextField().getText();
 
 		if (filtroPrefixo.equals("")) {
 			retorno.add("Prefixo para varredura de arquivos nao informado!");
@@ -184,26 +174,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 			}
 		}
 
-		if (icone.equals("")) {
-			retorno.add("Icone da aplicacao nao informado!");
-		} else {
-			if (!icone.endsWith(".png")) {
-				retorno.add("Extensao invalida para o Icone (PNG)!");
-			} else {
-				try {
-					File iconeApp = new File(icone);
-					if (!iconeApp.exists()) {
-						retorno.add("Icone invalido ou nao encontrado!");
-					}
-				} catch (Exception e) {
-					retorno.add("Icone invalido ou nao encontrado!");
-				}
-			}
-		}
-
 		if (diretorioImportacao.equals("")) {
 			retorno.add("Diretorio para importacao nao informado!");
 		} else {
+			if (!diretorioImportacao.substring(diretorioImportacao.length() - 1).equals("/")) {
+				diretorioImportacao.concat("/");
+			}
+
 			try {
 				if (!new File(diretorioImportacao).exists()) {
 					retorno.add("Diretorio para importacao invalido ou nao encontrado!");
@@ -216,24 +193,16 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		if (diretorioImportados.equals("")) {
 			retorno.add("Diretorio de destino para arquivos importados nao informado!");
 		} else {
+			if (!diretorioImportados.substring(diretorioImportados.length() - 1).equals("/")) {
+				diretorioImportados.concat("/");
+			}
+
 			try {
 				if (!new File(diretorioImportados).exists()) {
 					retorno.add("Diretorio para arquivos importados invalido ou nao encontrado!");
 				}
 			} catch (Exception e) {
 				retorno.add("Diretorio para arquivos importados invalido ou nao encontrado!");
-			}
-		}
-
-		if (diretorioLog.equals("")) {
-			retorno.add("Diretorio para importacao nao informado!");
-		} else {
-			try {
-				if (!new File(diretorioLog).exists()) {
-					retorno.add("Diretorio para arquivo de logs invalido ou nao encontrado!");
-				}
-			} catch (Exception e) {
-				retorno.add("Diretorio para arquivo de logs invalido ou nao encontrado!");
 			}
 		}
 

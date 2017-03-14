@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.datacoper.model;
 
 /**
@@ -33,21 +28,16 @@ public class Configuracoes {
 
 	public static final String DIRETORIORAIZ = System.getProperty("user.dir");
 	public static final String DIRETORIOCONFIGURACOES = DIRETORIORAIZ + "/config/";
-	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "/img/";
+	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "./src/main/resources/img/";
 	public static final String ARQUIVODECONFIGURACOES = "config.properties";
 	public static final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
 
-	public static final String TRUE = "SIM";
-	public static final String FALSE = "NAO";
-
 	public static final String PARAM_TEMPO_MONITORAR = "TEMPO_MONITORAR";
-	public static final String PARAM_ICONE = "ICONE";
 	public static final String PARAM_URL_POST = "URL_POST";
 	public static final String PARAM_FILTRO_PREFIXO = "FILTRO_PREFIXO";
 	public static final String PARAM_FILTRO_EXTENSAO = "FILTRO_EXTENSAO";
 	public static final String PARAM_DIRETORIO_IMPORTACAO = "DIRETORIO_IMPORTACAO";
 	public static final String PARAM_DIRETORIO_IMPORTADOS = "DIRETORIO_IMPORTADOS";
-	public static final String PARAM_DIRETORIO_LOG = "DIRETORIO_LOG";
 
 	private Map<String, Object> mapaParametros;
 	private List<String> listaParametros;
@@ -58,13 +48,11 @@ public class Configuracoes {
 		listaParametros = new ArrayList<String>();
 		mapaParametros = new HashMap<>();
 		listaParametros.add(PARAM_TEMPO_MONITORAR);
-		listaParametros.add(PARAM_ICONE);
 		listaParametros.add(PARAM_URL_POST);
 		listaParametros.add(PARAM_FILTRO_PREFIXO);
 		listaParametros.add(PARAM_FILTRO_EXTENSAO);
 		listaParametros.add(PARAM_DIRETORIO_IMPORTACAO);
 		listaParametros.add(PARAM_DIRETORIO_IMPORTADOS);
-		listaParametros.add(PARAM_DIRETORIO_LOG);
 
 		carregarParametros();
 		String log4jConfPath = DIRETORIOCONFIGURACOES + "log4j.properties";
@@ -107,10 +95,8 @@ public class Configuracoes {
 		String filtroExtensao = getParam(PARAM_FILTRO_EXTENSAO);
 		String tempoMonitorar = getParam(PARAM_TEMPO_MONITORAR);
 		String urlPost = getParam(PARAM_URL_POST);
-		String icone = getParam(PARAM_ICONE);
 		String diretorioImportacao = getParam(PARAM_DIRETORIO_IMPORTACAO);
 		String diretorioImportados = getParam(PARAM_DIRETORIO_IMPORTADOS);
-		String diretorioLog = getParam(PARAM_DIRETORIO_LOG);
 
 		if (filtroPrefixo.equals("")) {
 			retorno.add("Prefixo para varredura de arquivos nao informado!");
@@ -134,26 +120,14 @@ public class Configuracoes {
 			}
 		}
 
-		if (icone.equals("")) {
-			retorno.add("Icone da aplicacao nao informado!");
-		} else {
-			if (!icone.toLowerCase().endsWith(".png")) {
-				retorno.add("Extensao invalida para o Icone (PNG)!");
-			} else {
-				try {
-					File iconeApp = new File(icone);
-					if (!iconeApp.exists()) {
-						retorno.add("Icone invalido ou nao encontrado!");
-					}
-				} catch (Exception e) {
-					retorno.add("Icone invalido ou nao encontrado!");
-				}
-			}
-		}
-
 		if (diretorioImportacao.equals("")) {
 			retorno.add("Diretorio para importacao nao informado!");
 		} else {
+			if (!getParam(PARAM_DIRETORIO_IMPORTACAO).substring(getParam(PARAM_DIRETORIO_IMPORTACAO).length() - 1)
+					.equals("/")) {
+				setParam(PARAM_DIRETORIO_IMPORTACAO, getParam(PARAM_DIRETORIO_IMPORTACAO).concat("/"));
+			}
+
 			try {
 				if (!new File(diretorioImportacao).exists()) {
 					retorno.add("Diretorio para importacao invalido ou nao encontrado!");
@@ -166,24 +140,17 @@ public class Configuracoes {
 		if (diretorioImportados.equals("")) {
 			retorno.add("Diretorio de destino para arquivos importados nao informado!");
 		} else {
+			if (!getParam(PARAM_DIRETORIO_IMPORTADOS).substring(getParam(PARAM_DIRETORIO_IMPORTADOS).length() - 1)
+					.equals("/")) {
+				setParam(PARAM_DIRETORIO_IMPORTADOS, getParam(PARAM_DIRETORIO_IMPORTADOS).concat("/"));
+			}
+
 			try {
 				if (!new File(diretorioImportados).exists()) {
 					retorno.add("Diretorio para arquivos importados invalido ou nao encontrado!");
 				}
 			} catch (Exception e) {
 				retorno.add("Diretorio para arquivos importados invalido ou nao encontrado!");
-			}
-		}
-
-		if (diretorioLog.equals("")) {
-			retorno.add("Diretorio para importacao nao informado!");
-		} else {
-			try {
-				if (!new File(diretorioLog).exists()) {
-					retorno.add("Diretorio para arquivo de logs invalido ou nao encontrado!");
-				}
-			} catch (Exception e) {
-				retorno.add("Diretorio para arquivo de logs invalido ou nao encontrado!");
 			}
 		}
 

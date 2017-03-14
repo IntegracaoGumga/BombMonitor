@@ -13,19 +13,20 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.datacoper.model.Configuracoes;
 import br.datacoper.model.Abastecida;
+import br.datacoper.model.Configuracoes;
 
 public class Rest {
 
-	public static void enviarAbastecida(final Abastecida supplyAux) {
+	public static void enviarAbastecida(final Abastecida abastecida) {
+		ConexaoBanco conexao = ConexaoBanco.getConexaoBanco();
 		ObjectMapper mapper = new ObjectMapper();
 		Logger logger = Logger.getLogger("br.datacoper.control.Rest");
 
 		String jsonInString = null;
 		try {
 			logger.info("Conversao do objeto para JSON");
-			jsonInString = mapper.writeValueAsString(supplyAux);
+			jsonInString = mapper.writeValueAsString(abastecida);
 		} catch (JsonProcessingException e) {
 			logger.error("Erro na conversao do objeto para JSON");
 		}
@@ -40,9 +41,11 @@ public class Rest {
 			Response retorno = client.target(url).request(MediaType.APPLICATION_JSON)
 					.post(Entity.entity(jsonInString.toString(), MediaType.APPLICATION_JSON));
 
-			if (retorno.getStatus() == 200){
-				String fileOrigem = origem + supplyAux.getArquivo();
-				String fileDestino = destino + "ok_" + supplyAux.getArquivo();
+			
+			abastecida.setStatusHTTP(retorno.getStatus());
+			if (retorno.getStatus() == 200) {
+				String fileOrigem = origem + abastecida.getArquivo();
+				String fileDestino = destino + "ok_" + abastecida.getArquivo();
 
 				File file = new File(fileOrigem);
 				file.renameTo(new File(fileDestino));
@@ -50,11 +53,11 @@ public class Rest {
 				logger.info(String.format("Arquivo renomeado de %s para %s", fileOrigem, fileDestino));
 				break;
 			}
-			if (i == 3){		
-				logger.error(String.format("Erro no envio do JSON - %s", supplyAux.getArquivo()));
+			if (i == 3) {
+				logger.error(String.format("Erro no envio do JSON - %s", abastecida.getArquivo()));
 			}
 		}
-
+		conexao.getDatabase().set(abastecida);
 	}
 
 }

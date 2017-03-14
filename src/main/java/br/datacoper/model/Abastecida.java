@@ -1,11 +1,10 @@
-/**
- * 
- */
 package br.datacoper.model;
 
-import com.db4o.config.annotations.GeneratedUUIDs;
-import com.db4o.config.annotations.GeneratedVersionNumbers;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import java.math.BigDecimal;
+
+import javax.swing.JOptionPane;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * @author dread
@@ -17,11 +16,14 @@ public class Abastecida {
 
 	private String horaAbastecimento;
 	private String dataAbastecimento;
-	private Float quantidade;
-	private Float encerrante;
+	private BigDecimal quantidade;
+	private BigDecimal encerrante;
 	private Integer numeroBico;
 	private Integer frentista;
+	@JsonIgnore
 	private String arquivo;
+	@JsonIgnore
+	private Integer statusHTTP;
 
 	/**
 	 * @return the horaAbastecimento
@@ -35,7 +37,8 @@ public class Abastecida {
 	 *            the horaAbastecimento to set
 	 */
 	public Abastecida setHoraAbastecimento(final String horaAbastecimento) {
-		this.horaAbastecimento = horaAbastecimento;
+		this.horaAbastecimento = horaAbastecimento.substring(0, 2).concat(":").concat(horaAbastecimento.substring(2, 4))
+				.concat(":").concat(horaAbastecimento.substring(4));
 		return this;
 	}
 
@@ -51,14 +54,15 @@ public class Abastecida {
 	 *            the dataAbastecimento to set
 	 */
 	public Abastecida setDataAbastecimento(final String dataAbastecimento) {
-		this.dataAbastecimento = dataAbastecimento;
+		this.dataAbastecimento = dataAbastecimento.substring(0, 2).concat("/").concat(dataAbastecimento.substring(2, 4))
+				.concat("/").concat(dataAbastecimento.substring(4));
 		return this;
 	}
 
 	/**
 	 * @return the quantidade
 	 */
-	public Float getQuantidade() {
+	public BigDecimal getQuantidade() {
 		return quantidade;
 	}
 
@@ -66,7 +70,7 @@ public class Abastecida {
 	 * @param quantidade
 	 *            the quantidade to set
 	 */
-	public Abastecida setQuantidade(final Float quantidade) {
+	public Abastecida setQuantidade(final BigDecimal quantidade) {
 		this.quantidade = quantidade;
 		return this;
 	}
@@ -74,7 +78,7 @@ public class Abastecida {
 	/**
 	 * @return the encerrante
 	 */
-	public Float getEncerrante() {
+	public BigDecimal getEncerrante() {
 		return encerrante;
 	}
 
@@ -82,7 +86,7 @@ public class Abastecida {
 	 * @param encerrante
 	 *            the encerrante to set
 	 */
-	public Abastecida setEncerrante(final Float encerrante) {
+	public Abastecida setEncerrante(final BigDecimal encerrante) {
 		this.encerrante = encerrante;
 		return this;
 	}
@@ -130,7 +134,24 @@ public class Abastecida {
 	 * @param arquivo
 	 *            the arquivo to set
 	 */
-	public void setArquivo(String arquivo) {
+	public Abastecida setArquivo(final String arquivo) {
 		this.arquivo = arquivo;
+		return this;
+	}
+
+	/**
+	 * @return the statusHTTP
+	 */
+	public Integer getStatusHTTP() {
+		return statusHTTP;
+	}
+
+	/**
+	 * @param statusHTTP
+	 *            the statusHTTP to set
+	 */
+	public Abastecida setStatusHTTP(final Integer statusHTTP) {
+		this.statusHTTP = statusHTTP;
+		return this;
 	}
 }

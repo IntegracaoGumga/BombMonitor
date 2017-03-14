@@ -1,0 +1,321 @@
+14/03/17 10:57 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 10:57 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 10:57 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 134[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 134
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:11:53","dataAbastecimento":"08/03/2017","quantidade":60.0,"encerrante":313203.6,"numeroBico":6,"frentista":0}"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 13:57:51 GMT[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 134[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 13:57:51 GMT
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 134
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.control.Rest:54 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139456.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139456.txt
+14/03/17 10:57 [Finalizer] DEBUG org.apache.http.wire:77 - << "{"horaAbastecimento":"10:11:53","dataAbastecimento":"08/03/2017","quantidade":60.0,"encerrante":313203.6,"numeroBico":6,"frentista":0}"
+14/03/17 10:57 [Finalizer] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:189 - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@7fe0618
+14/03/17 10:57 [Finalizer] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:219 - Connection can be kept alive indefinitely
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 10:57 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 10:57 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 136[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 136
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:10:22","dataAbastecimento":"08/03/2017","quantidade":400.0,"encerrante":1173321.5,"numeroBico":5,"frentista":0}"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 13:57:51 GMT[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 136[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 13:57:51 GMT
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 136
+14/03/17 10:57 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 10:57 [Thread-2]  INFO br.datacoper.control.Rest:54 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139455.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139455.txt
+14/03/17 11:04 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:05 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:05 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:06 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:06 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:11 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:11 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:11 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:11 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:12 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:12 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:12 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:12 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:12 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:12 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:13 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:13 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:13 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:13 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:13 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:13 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:14 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:14 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:15 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:15 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:15 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:15 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:15 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:15 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:16 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:16 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:16 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:16 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:16 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:16 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:16 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:16 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:17 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:17 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:19 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:19 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:19 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:19 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:20 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:20 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:20 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:20 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:20 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:20 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:21 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:21 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:21 [Thread-2] ERROR br.datacoper.control.ConexaoBanco:26 - Erro na conexao com o banco /home/dread/workspace/BombMonitor/database/abastecimentoDB.yap
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:21 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:21 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:22 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:23 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:23 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:23 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.model.Monitor:92 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:23 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:23 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:23 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:24 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:24 [Thread-2]  INFO br.datacoper.model.Monitor:69 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [main]  INFO br.datacoper.model.Configuracoes:71 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 11:33 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:33 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 11:39 [main]  INFO br.datacoper.model.Configuracoes:61 - Iniciando leitura do arquivo de configuracoes
+14/03/17 11:39 [main]  INFO br.datacoper.view.MainAplicacao:38 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+14/03/17 11:39 [main]  INFO br.datacoper.view.TelaConfiguracoes:59 - Iniciando tela de configuracoes
+14/03/17 11:39 [main]  INFO br.datacoper.view.TelaConfiguracoes:101 - Carregando Parametros TelaConfiguracoes
+14/03/17 11:39 [main]  INFO br.datacoper.view.TelaConfiguracoes:85 - Adicionando componentes TelaConfiguracoes
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:132 - Salvando parametros
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!

@@ -6,12 +6,12 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import br.datacoper.control.ConexaoBanco;
 import br.datacoper.control.Rest;
 
 /**
@@ -27,6 +27,8 @@ public class Monitor implements Runnable {
 
 	private Thread threadMonitor;
 	private String diretorio;
+
+	private static final BigDecimal MIL = new BigDecimal(1000);
 
 	Logger logger = Logger.getLogger("br.datacoper.model.Monitor");
 
@@ -81,21 +83,19 @@ public class Monitor implements Runnable {
 	 * @param file
 	 */
 	private void converterArquivoAbastecida(final String file) {
-		ConexaoBanco conexao = ConexaoBanco.getConexaoBanco();
-
 		List<String> listFile = lerArquivo(file);
 		listFile.forEach(line -> {
-			Abastecida supplyAux = new Abastecida();
-			supplyAux.setNumeroBico(Integer.parseInt(line.substring(0, 2))).setHoraAbastecimento(line.substring(20, 26))
-					.setDataAbastecimento(line.substring(12, 20))
-					.setQuantidade(Float.parseFloat(line.substring(32, 40)) / 1000)
-					.setEncerrante(Float.parseFloat(line.substring(49, 61)) / 1000)
+			Abastecida abastecida = new Abastecida();
+			abastecida.setNumeroBico(Integer.parseInt(line.substring(0, 2)))
+					.setHoraAbastecimento(line.substring(20, 26)).setDataAbastecimento(line.substring(12, 20))
+					.setQuantidade(
+							new BigDecimal(line.substring(32, 40)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
+					.setEncerrante(new BigDecimal(line.substring(49, 61)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
 					.setFrentista(Integer.parseInt(line.substring(61, 65))).setArquivo(file);
 
-			logger.info(String.format("Salvando abastecida %s", supplyAux.getArquivo()));
-			conexao.getDatabase().set(supplyAux);
+			logger.info(String.format("Salvando abastecida %s", abastecida.getArquivo()));
 
-			Rest.enviarAbastecida(supplyAux);
+			Rest.enviarAbastecida(abastecida);
 		});
 	}
 
@@ -131,15 +131,15 @@ public class Monitor implements Runnable {
 						* Integer.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TEMPO_MONITORAR)));
 			} catch (InterruptedException e) {
 				logger.error(String.format("Erro na execuçao da thread: %s", e.getMessage()));
-			} catch (NumberFormatException ex){
+			} catch (NumberFormatException ex) {
 				logger.error(String.format("Tempo invalido para a execucao da thread"));
 			}
-			
+
 		}
 	}
 
 	public String getDiretorio() {
-		return diretorio.toLowerCase();
+		return diretorio;
 	}
 
 	public void setDiretorio(final String diretorio) {

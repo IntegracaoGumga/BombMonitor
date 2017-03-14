@@ -1,6 +1,6 @@
 package br.datacoper.view;
 
-import java.awt.GridLayout;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,7 +8,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Inclui um TextField + Button para buscar Diretorio
@@ -24,30 +23,43 @@ public class MyFolderField extends javax.swing.JPanel {
 	private JFileChooser arquivo = new JFileChooser();
 	private JTextField textField = new JTextField();
 
+	/**
+	 * Metodo construtor
+	 * @param largura
+	 * @param titulo
+	 */
 	public MyFolderField(final int largura, final String titulo) {
 		this.setSize(largura, 40);
-		this.setLayout(new GridLayout());
+		this.setLayout(new BorderLayout());
 		addComponentesPadrao(largura);
 		this.setBorder(BorderFactory.createTitledBorder(titulo));
 	}
 
+	/**
+	 * Adicona os componentes no panel
+	 * @param largura
+	 */
 	public void addComponentesPadrao(final int largura) {
-		ActionListener procurarPasta = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		buttonFind.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser arquivo = new JFileChooser();
 				arquivo.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-				FileNameExtensionFilter filtroPDF = new FileNameExtensionFilter("Pastas", "folder");
-				arquivo.addChoosableFileFilter(filtroPDF);
 				arquivo.setAcceptAllFileFilterUsed(false);
-
+				arquivo.showSaveDialog(null);
+				if (arquivo.getSelectedFile() != null) {
+					textField.setText(arquivo.getSelectedFile().toString());
+				}
 			}
-		};
-		buttonFind.addActionListener(procurarPasta);
+		});
 		this.add(textField).setEnabled(false);
-		this.add(buttonFind);
+		this.add(buttonFind, BorderLayout.LINE_END);
 	}
 
+	/**
+	 * Inicializa os componentes
+	 */
 	@SuppressWarnings("unchecked")
 	private void initComponents() {
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
