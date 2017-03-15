@@ -319,3 +319,461 @@
 14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
 14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
 14/03/17 11:39 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [main]  INFO br.datacoper.model.Configuracoes:62 - Iniciando leitura do arquivo de configuracoes
+14/03/17 13:21 [main]  INFO br.datacoper.view.MainAplicacao:38 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+14/03/17 13:21 [main]  INFO br.datacoper.view.TelaConfiguracoes:59 - Iniciando tela de configuracoes
+14/03/17 13:21 [main]  INFO br.datacoper.view.TelaConfiguracoes:101 - Carregando Parametros TelaConfiguracoes
+14/03/17 13:21 [main]  INFO br.datacoper.view.TelaConfiguracoes:85 - Adicionando componentes TelaConfiguracoes
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:21 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:22 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:22 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:22 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:22 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:132 - Salvando parametros
+14/03/17 13:22 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+14/03/17 13:22 [main]  INFO br.datacoper.model.Configuracoes:62 - Iniciando leitura do arquivo de configuracoes
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 13:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 13:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 138[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 138
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:11:53","dataAbastecimento":"08/03/2017","quantidade":60.000,"encerrante":313203.600,"numeroBico":6,"frentista":0}"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 16:22:52 GMT[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 138[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 16:22:52 GMT
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 138
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139456.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139456.txt
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 13:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 13:22 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 140[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 140
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:10:22","dataAbastecimento":"08/03/2017","quantidade":400.000,"encerrante":1173321.430,"numeroBico":5,"frentista":0}"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 16:22:52 GMT[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 140[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 16:22:52 GMT
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 140
+14/03/17 13:22 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 13:22 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139455.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139455.txt
+14/03/17 13:22 [main]  INFO br.datacoper.model.Configuracoes:62 - Iniciando leitura do arquivo de configuracoes
+14/03/17 13:34 [main]  INFO br.datacoper.model.Configuracoes:62 - Iniciando leitura do arquivo de configuracoes
+14/03/17 14:58 [main]  INFO br.datacoper.model.Configuracoes:62 - Iniciando leitura do arquivo de configuracoes
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139456.txt
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139456.txt
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 14:58 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 14:58 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 138[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 138
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:11:53","dataAbastecimento":"08/03/2017","quantidade":60.000,"encerrante":313203.600,"numeroBico":6,"frentista":0}"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 17:58:54 GMT[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 138[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 17:58:54 GMT
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 138
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139456.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139456.txt
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.model.Monitor:72 - Arquivo encontrado: Ab_0000139455.txt
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.model.Monitor:96 - Salvando abastecida Ab_0000139455.txt
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+14/03/17 14:58 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 14:58 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 140[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 140
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:10:22","dataAbastecimento":"08/03/2017","quantidade":400.000,"encerrante":1173321.430,"numeroBico":5,"frentista":0}"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Tue, 14 Mar 2017 17:58:54 GMT[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 140[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Tue, 14 Mar 2017 17:58:54 GMT
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 140
+14/03/17 14:58 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+14/03/17 14:58 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139455.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139455.txt
+15/03/17 10:15 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:15 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+15/03/17 10:15 [main]  INFO br.datacoper.view.TelaConfiguracoes:60 - Iniciando tela de configuracoes
+15/03/17 10:15 [main]  INFO br.datacoper.view.TelaConfiguracoes:103 - Carregando Parametros TelaConfiguracoes
+15/03/17 10:15 [main]  INFO br.datacoper.view.TelaConfiguracoes:86 - Adicionando componentes TelaConfiguracoes
+15/03/17 10:15 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:15 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:15 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:15 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [AWT-EventQueue-0] ERROR br.datacoper.view.TelaConfiguracoes:220 - Erros na validacao dos parametros: Tempo para monitoramento do diretorio invalido!
+Diretorio para importacao nao informado!
+
+15/03/17 10:16 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:124 - Parametros incorretos.
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:16 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+15/03/17 10:16 [main]  INFO br.datacoper.view.TelaConfiguracoes:60 - Iniciando tela de configuracoes
+15/03/17 10:16 [main]  INFO br.datacoper.view.TelaConfiguracoes:103 - Carregando Parametros TelaConfiguracoes
+15/03/17 10:16 [main]  INFO br.datacoper.view.TelaConfiguracoes:86 - Adicionando componentes TelaConfiguracoes
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:16 [Thread-2] ERROR br.datacoper.model.Monitor:76 - Diretorio  vazio!
+15/03/17 10:26 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:26 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+15/03/17 10:26 [main]  INFO br.datacoper.view.TelaConfiguracoes:60 - Iniciando tela de configuracoes
+15/03/17 10:26 [main]  INFO br.datacoper.view.TelaConfiguracoes:103 - Carregando Parametros TelaConfiguracoes
+15/03/17 10:26 [main]  INFO br.datacoper.view.TelaConfiguracoes:86 - Adicionando componentes TelaConfiguracoes
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:26 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:136 - Salvando parametros
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [Thread-2] ERROR br.datacoper.model.Monitor:79 - Diretorio  vazio!
+15/03/17 10:27 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:75 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:99 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:75 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:99 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:75 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:99 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:75 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.model.Monitor:99 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:27 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:27 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:31 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:31 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:32 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139456.txt
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139456.txt
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.control.ConexaoBanco:21 - Iniciando conexao com o banco
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:32 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:32 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 138[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 138
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:11:53","dataAbastecimento":"08/03/2017","quantidade":60.000,"encerrante":313203.600,"numeroBico":6,"frentista":0}"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Wed, 15 Mar 2017 13:33:24 GMT[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 138[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Wed, 15 Mar 2017 13:33:24 GMT
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 138
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139456.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139456.txt
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.model.Monitor:80 - Arquivo encontrado: Ab_0000139455.txt
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.model.Monitor:106 - Salvando abastecida Ab_0000139455.txt
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.control.Rest:28 - Conversao do objeto para JSON
+15/03/17 10:32 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:32 [Thread-2] DEBUG org.jboss.resteasy.plugins.providers.DocumentProvider:60 - Unable to retrieve config: expandEntityReferences defaults to true
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.BasicClientConnectionManager:157 - Get connection for route {}->http://10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnectionOperator:177 - Connecting to 10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAddCookies:132 - CookieSpec selected: best-match
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestAuthCache:78 - Auth cache not set in the context
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestTargetAuthentication:78 - Target auth state: UNCHALLENGED
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.client.protocol.RequestProxyAuthentication:87 - Proxy auth state: UNCHALLENGED
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:710 - Attempt 1 to execute request
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:269 - Sending request: POST /IntegradorProgress/rest/Dread HTTP/1.1
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "POST /IntegradorProgress/rest/Dread HTTP/1.1[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Type: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept-Encoding: gzip, deflate[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Accept: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Content-Length: 140[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Host: 10.150.61.20:8080[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "Connection: Keep-Alive[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "User-Agent: Apache-HttpClient/4.2.1 (java 1.5)[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - >> "[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:273 - >> POST /IntegradorProgress/rest/Dread HTTP/1.1
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Type: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept-Encoding: gzip, deflate
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Accept: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Content-Length: 140
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Host: 10.150.61.20:8080
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> Connection: Keep-Alive
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:276 - >> User-Agent: Apache-HttpClient/4.2.1 (java 1.5)
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:77 - >> "{"horaAbastecimento":"10:10:22","dataAbastecimento":"08/03/2017","quantidade":400.000,"encerrante":1173321.430,"numeroBico":5,"frentista":0}"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "HTTP/1.1 200 OK[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Server: GlassFish Server Open Source Edition  4.1.1 [\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Type: application/json[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Date: Wed, 15 Mar 2017 13:33:24 GMT[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "Content-Length: 140[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.wire:63 - << "[\r][\n]"
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.conn.DefaultClientConnection:254 - Receiving response: HTTP/1.1 200 OK
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:257 - << HTTP/1.1 200 OK
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Server: GlassFish Server Open Source Edition  4.1.1 
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.1.1  Java/Oracle Corporation/1.8)
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Type: application/json
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Date: Wed, 15 Mar 2017 13:33:24 GMT
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.headers:260 - << Content-Length: 140
+15/03/17 10:32 [Thread-2] DEBUG org.apache.http.impl.client.DefaultHttpClient:540 - Connection can be kept alive indefinitely
+15/03/17 10:32 [Thread-2]  INFO br.datacoper.control.Rest:53 - Arquivo renomeado de /home/dread/workspace/BombMonitor/importar/Ab_0000139455.txt para /home/dread/workspace/BombMonitor/importados/ok_Ab_0000139455.txt

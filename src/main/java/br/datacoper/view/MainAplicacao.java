@@ -33,7 +33,6 @@ public class MainAplicacao {
 	 */
 	public static void main(final String[] args) {
 
-
 		if (!Configuracoes.getInstancia().getValido()) {
 			logger.info("Parametros do arquivo invalidos! Abrindo tela para configuracoes.");
 			TelaConfiguracoes tela = new TelaConfiguracoes();

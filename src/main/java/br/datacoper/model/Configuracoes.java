@@ -31,8 +31,10 @@ public class Configuracoes {
 	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "./src/main/resources/img/";
 	public static final String ARQUIVODECONFIGURACOES = "config.properties";
 	public static final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
+	public static final String SEPARADOR = System.getProperty("file.separator");
 
 	public static final String PARAM_TEMPO_MONITORAR = "TEMPO_MONITORAR";
+	public static final String PARAM_TAMANHO_LINHA = "TAMANHO_LINHA";
 	public static final String PARAM_URL_POST = "URL_POST";
 	public static final String PARAM_FILTRO_PREFIXO = "FILTRO_PREFIXO";
 	public static final String PARAM_FILTRO_EXTENSAO = "FILTRO_EXTENSAO";
@@ -48,6 +50,7 @@ public class Configuracoes {
 		listaParametros = new ArrayList<String>();
 		mapaParametros = new HashMap<>();
 		listaParametros.add(PARAM_TEMPO_MONITORAR);
+		listaParametros.add(PARAM_TAMANHO_LINHA);
 		listaParametros.add(PARAM_URL_POST);
 		listaParametros.add(PARAM_FILTRO_PREFIXO);
 		listaParametros.add(PARAM_FILTRO_EXTENSAO);
@@ -94,6 +97,7 @@ public class Configuracoes {
 		String filtroPrefixo = getParam(PARAM_FILTRO_PREFIXO);
 		String filtroExtensao = getParam(PARAM_FILTRO_EXTENSAO);
 		String tempoMonitorar = getParam(PARAM_TEMPO_MONITORAR);
+		String tamanhoLinha = getParam(PARAM_TAMANHO_LINHA);
 		String urlPost = getParam(PARAM_URL_POST);
 		String diretorioImportacao = getParam(PARAM_DIRETORIO_IMPORTACAO);
 		String diretorioImportados = getParam(PARAM_DIRETORIO_IMPORTADOS);
@@ -114,9 +118,19 @@ public class Configuracoes {
 			retorno.add("Tempo para monitoramento do diretorio nao informado!");
 		} else {
 			try {
-				int conversao = Integer.parseInt(tempoMonitorar);
+				Integer.parseInt(tempoMonitorar);
 			} catch (Exception e) {
 				retorno.add("Tempo para monitoramento do diretorio invalido!");
+			}
+		}
+
+		if (tamanhoLinha.equals("")) {
+			retorno.add("Tamanho da linha do arquivo para importação nao informado!");
+		} else {
+			try {
+				Integer.parseInt(tamanhoLinha);
+			} catch (Exception e) {
+				retorno.add("Tamanho da linha do arquivo para importação invalido!");
 			}
 		}
 
@@ -141,8 +155,8 @@ public class Configuracoes {
 			retorno.add("Diretorio de destino para arquivos importados nao informado!");
 		} else {
 			if (!getParam(PARAM_DIRETORIO_IMPORTADOS).substring(getParam(PARAM_DIRETORIO_IMPORTADOS).length() - 1)
-					.equals("/")) {
-				setParam(PARAM_DIRETORIO_IMPORTADOS, getParam(PARAM_DIRETORIO_IMPORTADOS).concat("/"));
+					.equals(SEPARADOR)) {
+				setParam(PARAM_DIRETORIO_IMPORTADOS, getParam(PARAM_DIRETORIO_IMPORTADOS).concat(SEPARADOR));
 			}
 
 			try {

@@ -45,7 +45,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 	private MyTextField mtfFiltroPrefixo = new MyTextField(LARGURA, "FILTRAR PREFIXO");
 	private MyTextField mtfFiltroExtensao = new MyTextField(LARGURA, "FILTRAR EXTENSAO");
-	private MyTextField mtfTempoMonitorar = new MyTextField(LARGURA, "TEMPO MONITORAMENTO (SEGUNDOS)");
+	private MyNumberField mtfTempoMonitorar = new MyNumberField(LARGURA, "TEMPO MONITORAMENTO (SEGUNDOS)");
+	private MyNumberField mtfTamanhoLinha = new MyNumberField(LARGURA, "TAMANHO DA LINHA - ARQUIVO IMPORTACAO");
 	private MyTextField mtfUrlPost = new MyTextField(LARGURA, "URL POST");
 	private MyFolderField mffDiretorioImportacao = new MyFolderField(LARGURA, "DIRETORIO IMPORTACAO");
 	private MyFolderField mffDiretorioImportados = new MyFolderField(LARGURA, "DIRETORIO DESTINO");
@@ -86,6 +87,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		jpTelaConfiguracoes.add(mtfFiltroPrefixo);
 		jpTelaConfiguracoes.add(mtfFiltroExtensao);
 		jpTelaConfiguracoes.add(mtfTempoMonitorar);
+		jpTelaConfiguracoes.add(mtfTamanhoLinha);
 		jpTelaConfiguracoes.add(mtfUrlPost);
 		jpTelaConfiguracoes.add(mffDiretorioImportacao);
 		jpTelaConfiguracoes.add(mffDiretorioImportados);
@@ -102,7 +104,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 		mffDiretorioImportados.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS));
 		mffDiretorioImportacao.getTextField().setText(config.getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO));
-		mtfTempoMonitorar.getTextField().setText(config.getParam(Configuracoes.PARAM_TEMPO_MONITORAR));
+		mtfTempoMonitorar.getNumberField().setText(config.getParam(Configuracoes.PARAM_TEMPO_MONITORAR));
+		mtfTamanhoLinha.getNumberField().setText(config.getParam(Configuracoes.PARAM_TAMANHO_LINHA));
 		mtfUrlPost.getTextField().setText(config.getParam(Configuracoes.PARAM_URL_POST));
 		mtfFiltroExtensao.getTextField().setText(config.getParam(Configuracoes.PARAM_FILTRO_EXTENSAO));
 		mtfFiltroPrefixo.getTextField().setText(config.getParam(Configuracoes.PARAM_FILTRO_PREFIXO));
@@ -125,16 +128,16 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS, mffDiretorioImportados.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO, mffDiretorioImportacao.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_URL_POST, mtfUrlPost.getTextField().getText());
-		config.setParam(Configuracoes.PARAM_TEMPO_MONITORAR, mtfTempoMonitorar.getTextField().getText());
+		config.setParam(Configuracoes.PARAM_TEMPO_MONITORAR, mtfTempoMonitorar.getNumberField().getText());
+		config.setParam(Configuracoes.PARAM_TAMANHO_LINHA, mtfTamanhoLinha.getNumberField().getText());
 		config.setParam(Configuracoes.PARAM_FILTRO_EXTENSAO, mtfFiltroExtensao.getTextField().getText());
 		config.setParam(Configuracoes.PARAM_FILTRO_PREFIXO, mtfFiltroPrefixo.getTextField().getText());
 
 		logger.info("Salvando parametros");
 		config.gravarParametros();
 
-		JOptionPane.showMessageDialog(null, "SALVO COM SUCESSO!" + "\n"
-				+ "A APLICACAO DEVE SER REINICIADA PARA QUE OS PARAMETROS SEJAM CARREGADOS NOVAMENTE!");
-		System.exit(0);
+		JOptionPane.showMessageDialog(null, "SALVO COM SUCESSO!");
+		Configuracoes.getInstancia().carregarParametros();
 	}
 
 	/**
@@ -147,7 +150,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 		String filtroPrefixo = mtfFiltroPrefixo.getTextField().getText();
 		String filtroExtensao = mtfFiltroExtensao.getTextField().getText();
-		String tempoMonitorar = mtfTempoMonitorar.getTextField().getText();
+		String tempoMonitorar = mtfTempoMonitorar.getNumberField().getText();
 		String urlPost = mtfUrlPost.getTextField().getText();
 		String diretorioImportacao = mffDiretorioImportacao.getTextField().getText();
 		String diretorioImportados = mffDiretorioImportados.getTextField().getText();
@@ -193,8 +196,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		if (diretorioImportados.equals("")) {
 			retorno.add("Diretorio de destino para arquivos importados nao informado!");
 		} else {
-			if (!diretorioImportados.substring(diretorioImportados.length() - 1).equals("/")) {
-				diretorioImportados.concat("/");
+			if (!diretorioImportados.substring(diretorioImportados.length() - 1).equals(Configuracoes.SEPARADOR)) {
+				diretorioImportados.concat(Configuracoes.SEPARADOR);
 			}
 
 			try {

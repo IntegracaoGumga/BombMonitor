@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 
 import br.datacoper.control.Rest;
@@ -29,6 +31,8 @@ public class Monitor implements Runnable {
 	private String diretorio;
 
 	private static final BigDecimal MIL = new BigDecimal(1000);
+	private static final Integer TAMANHO = Integer
+			.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TAMANHO_LINHA));
 
 	Logger logger = Logger.getLogger("br.datacoper.model.Monitor");
 
@@ -69,8 +73,13 @@ public class Monitor implements Runnable {
 		try {
 			for (int i = 0; i < arquivos.length; i++) {
 				File file = arquivos[i];
-				logger.info(String.format("Arquivo encontrado: %s", file.getName()));
-				converterArquivoAbastecida(file.getName());
+				if (file.length() != TAMANHO) {
+					logger.error(
+							String.format("Tamanho %d invalido para o arquivo: %s", file.length(), file.getName()));
+				} else {
+					logger.info(String.format("Arquivo encontrado: %s", file.getName()));
+					converterArquivoAbastecida(file.getName());
+				}
 			}
 		} catch (NullPointerException e) {
 			logger.error(String.format("Diretorio %s vazio!", dir));
@@ -90,7 +99,8 @@ public class Monitor implements Runnable {
 					.setHoraAbastecimento(line.substring(20, 26)).setDataAbastecimento(line.substring(12, 20))
 					.setQuantidade(
 							new BigDecimal(line.substring(32, 40)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
-					.setEncerrante(new BigDecimal(line.substring(49, 61)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
+					.setEncerrante(
+							new BigDecimal(line.substring(49, 61)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
 					.setFrentista(Integer.parseInt(line.substring(61, 65))).setArquivo(file);
 
 			logger.info(String.format("Salvando abastecida %s", abastecida.getArquivo()));
