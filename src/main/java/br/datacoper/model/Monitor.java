@@ -134,7 +134,10 @@ public class Monitor implements Runnable {
 		// thread que fica verificando a pasta
 		while (this.threadMonitor == currentThread) {
 
-			verificarDiretorio(getDiretorio());
+			if (Configuracoes.getInstancia().getValido()){
+				System.out.println("teste git");
+				verificarDiretorio(getDiretorio());				
+			}
 
 			try {
 				Thread.sleep(1000

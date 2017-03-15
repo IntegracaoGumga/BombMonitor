@@ -138,6 +138,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 		JOptionPane.showMessageDialog(null, "SALVO COM SUCESSO!");
 		Configuracoes.getInstancia().carregarParametros();
+		this.dispose();
 	}
 
 	/**
@@ -180,8 +181,9 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		if (diretorioImportacao.equals("")) {
 			retorno.add("Diretorio para importacao nao informado!");
 		} else {
-			if (!diretorioImportacao.substring(diretorioImportacao.length() - 1).equals("/")) {
-				diretorioImportacao.concat("/");
+			if (!diretorioImportacao.substring(diretorioImportacao.length() - 1).equals(Configuracoes.SEPARADOR)) {
+				diretorioImportacao += Configuracoes.SEPARADOR;
+				mffDiretorioImportacao.getTextField().setText(diretorioImportacao);
 			}
 
 			try {
@@ -197,7 +199,8 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 			retorno.add("Diretorio de destino para arquivos importados nao informado!");
 		} else {
 			if (!diretorioImportados.substring(diretorioImportados.length() - 1).equals(Configuracoes.SEPARADOR)) {
-				diretorioImportados.concat(Configuracoes.SEPARADOR);
+				diretorioImportados += Configuracoes.SEPARADOR;
+				mffDiretorioImportacao.getTextField().setText(diretorioImportados);
 			}
 
 			try {

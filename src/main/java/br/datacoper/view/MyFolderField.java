@@ -25,6 +25,7 @@ public class MyFolderField extends javax.swing.JPanel {
 
 	/**
 	 * Metodo construtor
+	 * 
 	 * @param largura
 	 * @param titulo
 	 */
@@ -37,6 +38,7 @@ public class MyFolderField extends javax.swing.JPanel {
 
 	/**
 	 * Adicona os componentes no panel
+	 * 
 	 * @param largura
 	 */
 	public void addComponentesPadrao(final int largura) {
@@ -55,19 +57,6 @@ public class MyFolderField extends javax.swing.JPanel {
 		});
 		this.add(textField).setEnabled(false);
 		this.add(buttonFind, BorderLayout.LINE_END);
-	}
-
-	/**
-	 * Inicializa os componentes
-	 */
-	@SuppressWarnings("unchecked")
-	private void initComponents() {
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-		this.setLayout(layout);
-		layout.setHorizontalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 400, Short.MAX_VALUE));
-		layout.setVerticalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 300, Short.MAX_VALUE));
 	}
 
 	/**
