@@ -139,8 +139,7 @@ public class Configuracoes {
 		} else {
 			if (!getParam(PARAM_DIRETORIO_IMPORTACAO).substring(getParam(PARAM_DIRETORIO_IMPORTACAO).length() - 1)
 					.equals(SEPARADOR)) {
-				setParam(PARAM_DIRETORIO_IMPORTACAO,
-						getParam(PARAM_DIRETORIO_IMPORTACAO) + SEPARADOR);
+				setParam(PARAM_DIRETORIO_IMPORTACAO, getParam(PARAM_DIRETORIO_IMPORTACAO) + SEPARADOR);
 			}
 
 			try {
@@ -157,7 +156,7 @@ public class Configuracoes {
 		} else {
 			if (!getParam(PARAM_DIRETORIO_IMPORTADOS).substring(getParam(PARAM_DIRETORIO_IMPORTADOS).length() - 1)
 					.equals(SEPARADOR)) {
-				setParam(PARAM_DIRETORIO_IMPORTADOS, getParam(PARAM_DIRETORIO_IMPORTADOS)+ SEPARADOR);
+				setParam(PARAM_DIRETORIO_IMPORTADOS, getParam(PARAM_DIRETORIO_IMPORTADOS) + SEPARADOR);
 			}
 
 			try {

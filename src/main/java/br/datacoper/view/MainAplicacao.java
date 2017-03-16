@@ -35,8 +35,7 @@ public class MainAplicacao {
 
 		if (!Configuracoes.getInstancia().getValido()) {
 			logger.info("Parametros do arquivo invalidos! Abrindo tela para configuracoes.");
-			TelaConfiguracoes tela = new TelaConfiguracoes();
-			tela.setVisible(true);
+			TelaConfiguracoes.getTela().setVisible(true);
 		}
 
 		final TrayIcon trayIcon;
@@ -55,8 +54,7 @@ public class MainAplicacao {
 		ActionListener configListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				logger.info("Opcao CONFIGURACOES acionada.");
-				TelaConfiguracoes tela = new TelaConfiguracoes();
-				tela.setVisible(true);
+				TelaConfiguracoes.getTela().setVisible(true);
 			}
 		};
 
@@ -73,6 +71,7 @@ public class MainAplicacao {
 
 		trayIcon = new TrayIcon(image, "Monitor de Abastecidas", popup);
 		trayIcon.setImageAutoSize(true);
+		trayIcon.addActionListener(configListener);
 
 		try {
 			tray.add(trayIcon);

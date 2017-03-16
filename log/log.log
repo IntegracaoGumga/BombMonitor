@@ -880,3 +880,71 @@ Diretorio para importacao nao informado!
 15/03/17 10:54 [main]  INFO br.datacoper.view.TelaConfiguracoes:103 - Carregando Parametros TelaConfiguracoes
 15/03/17 10:54 [main]  INFO br.datacoper.view.TelaConfiguracoes:86 - Adicionando componentes TelaConfiguracoes
 15/03/17 10:55 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:136 - Salvando parametros
+16/03/17 08:57 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 08:57 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 08:57 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 08:57 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 08:57 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 08:57 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 08:57 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 08:58 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 08:58 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 08:58 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 08:58 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 08:58 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 08:58 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 08:58 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 08:58 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 08:58 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 08:58 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 08:58 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 08:59 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 08:59 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 08:59 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 08:59 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 08:59 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:00 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 09:02 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 09:02 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 09:02 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 09:02 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 09:02 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:03 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:03 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 09:03 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:03 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:03 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:04 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 09:04 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 09:04 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 09:04 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 09:04 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:04 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 09:05 [main]  INFO br.datacoper.model.Configuracoes:64 - Iniciando leitura do arquivo de configuracoes
+16/03/17 09:05 [main]  INFO br.datacoper.view.MainAplicacao:37 - Parametros do arquivo invalidos! Abrindo tela para configuracoes.
+16/03/17 09:05 [main]  INFO br.datacoper.view.TelaConfiguracoes:63 - Iniciando tela de configuracoes
+16/03/17 09:05 [main]  INFO br.datacoper.view.TelaConfiguracoes:106 - Carregando Parametros TelaConfiguracoes
+16/03/17 09:05 [main]  INFO br.datacoper.view.TelaConfiguracoes:89 - Adicionando componentes TelaConfiguracoes
+16/03/17 09:05 [AWT-EventQueue-0]  INFO br.datacoper.view.TelaConfiguracoes:139 - Salvando parametros
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!
+16/03/17 09:05 [Thread-2] ERROR br.datacoper.model.Monitor:85 - Diretorio  vazio!

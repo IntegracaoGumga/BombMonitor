@@ -25,13 +25,16 @@ import org.apache.log4j.Logger;
 import br.datacoper.model.Configuracoes;
 
 /**
- *
+ * Singleton de tela de configuracoes
+ * 
  * @author Dread
  */
 public class TelaConfiguracoes extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	private static TelaConfiguracoes telaConfiguracoes = new TelaConfiguracoes();
+	
 	public static final int LARGURA = 600;
 	public static final int ALTURA = 400;
 
@@ -56,7 +59,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	/**
 	 * Construtor para a tela de configuraçoes
 	 */
-	public TelaConfiguracoes() {
+	private TelaConfiguracoes() {
 		logger.info("Iniciando tela de configuracoes");
 
 		config = Configuracoes.getInstancia();
@@ -200,7 +203,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		} else {
 			if (!diretorioImportados.substring(diretorioImportados.length() - 1).equals(Configuracoes.SEPARADOR)) {
 				diretorioImportados += Configuracoes.SEPARADOR;
-				mffDiretorioImportacao.getTextField().setText(diretorioImportados);
+				mffDiretorioImportados.getTextField().setText(diretorioImportados);
 			}
 
 			try {
@@ -226,6 +229,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		return true;
 	}
 
+	public static TelaConfiguracoes getTela(){
+		if (telaConfiguracoes == null){
+			telaConfiguracoes = new TelaConfiguracoes();
+		}
+		return telaConfiguracoes;
+	}
+	
 	/**
 	 * Adiciona a açao salvar ao botão
 	 * 
