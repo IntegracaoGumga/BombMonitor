@@ -2,6 +2,7 @@ package br.datacoper.control;
 
 import java.io.File;
 
+import javax.swing.JOptionPane;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.datacoper.model.Abastecida;
 import br.datacoper.model.Configuracoes;
+import br.datacoper.view.TelaConfiguracoes;
 
 public class Rest {
 
@@ -30,7 +32,7 @@ public class Rest {
 		} catch (JsonProcessingException e) {
 			logger.error("Erro na conversao do objeto para JSON");
 		}
-
+		
 		String url = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_URL_POST);
 		String origem = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_DIRETORIO_IMPORTACAO);
 		String destino = Configuracoes.getInstancia().getParam(Configuracoes.PARAM_DIRETORIO_IMPORTADOS);
@@ -38,26 +40,31 @@ public class Rest {
 		Client client = ClientBuilder.newClient();
 
 		for (int i = 1; i <= 3; i++) {
-			Response retorno = client.target(url).request(MediaType.APPLICATION_JSON)
-					.post(Entity.entity(jsonInString.toString(), MediaType.APPLICATION_JSON));
+			try {
 
-			
-			abastecida.setStatusHTTP(retorno.getStatus());
-			if (retorno.getStatus() == 200) {
-				String fileOrigem = origem + abastecida.getArquivo();
-				String fileDestino = destino + "ok_" + abastecida.getArquivo();
+				Response retorno = client.target(url).request(MediaType.APPLICATION_JSON)
+						.post(Entity.entity(jsonInString.toString(), MediaType.APPLICATION_JSON));
 
-				File file = new File(fileOrigem);
-				file.renameTo(new File(fileDestino));
+				abastecida.setStatusHTTP(retorno.getStatus());
+				if (retorno.getStatus() == 200) {
+					String fileOrigem = origem + abastecida.getArquivo();
+					String fileDestino = destino + "ok_" + abastecida.getArquivo();
 
-				logger.info(String.format("Arquivo renomeado de %s para %s", fileOrigem, fileDestino));
-				break;
-			}
-			if (i == 3) {
+					File file = new File(fileOrigem);
+					file.renameTo(new File(fileDestino));
+
+					logger.info(String.format("Arquivo renomeado de %s para %s", fileOrigem, fileDestino));
+					break;
+				}
+				if (i == 3) {
+					logger.error(String.format("Erro no envio do JSON - %s", abastecida.getArquivo()));
+				}
+			} catch (Exception e) {
 				logger.error(String.format("Erro no envio do JSON - %s", abastecida.getArquivo()));
 			}
 		}
 		conexao.getDatabase().set(abastecida);
+		TelaConfiguracoes.getTela().carregarTabela();
 	}
 
 }

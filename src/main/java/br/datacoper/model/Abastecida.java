@@ -2,9 +2,8 @@ package br.datacoper.model;
 
 import java.math.BigDecimal;
 
-import javax.swing.JOptionPane;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 /**
  * @author dread
@@ -16,10 +15,11 @@ public class Abastecida {
 
 	private String horaAbastecimento;
 	private String dataAbastecimento;
-	private BigDecimal quantidade;
-	private BigDecimal encerrante;
+	private Double quantidade;
+	private Double encerrante;
 	private Integer numeroBico;
 	private Integer frentista;
+
 	@JsonIgnore
 	private String arquivo;
 	@JsonIgnore
@@ -62,7 +62,7 @@ public class Abastecida {
 	/**
 	 * @return the quantidade
 	 */
-	public BigDecimal getQuantidade() {
+	public Double getQuantidade() {
 		return quantidade;
 	}
 
@@ -70,7 +70,7 @@ public class Abastecida {
 	 * @param quantidade
 	 *            the quantidade to set
 	 */
-	public Abastecida setQuantidade(final BigDecimal quantidade) {
+	public Abastecida setQuantidade(final Double quantidade) {
 		this.quantidade = quantidade;
 		return this;
 	}
@@ -78,7 +78,7 @@ public class Abastecida {
 	/**
 	 * @return the encerrante
 	 */
-	public BigDecimal getEncerrante() {
+	public Double getEncerrante() {
 		return encerrante;
 	}
 
@@ -86,7 +86,7 @@ public class Abastecida {
 	 * @param encerrante
 	 *            the encerrante to set
 	 */
-	public Abastecida setEncerrante(final BigDecimal encerrante) {
+	public Abastecida setEncerrante(final Double encerrante) {
 		this.encerrante = encerrante;
 		return this;
 	}

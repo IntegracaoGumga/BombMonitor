@@ -19,9 +19,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 import org.apache.log4j.Logger;
 
+import com.db4o.ObjectSet;
+import com.db4o.query.Query;
+
+import br.datacoper.control.ConexaoBanco;
+import br.datacoper.model.Abastecida;
 import br.datacoper.model.Configuracoes;
 
 /**
@@ -34,17 +44,20 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	private static final long serialVersionUID = 1L;
 
 	private static TelaConfiguracoes telaConfiguracoes = new TelaConfiguracoes();
-	
+
 	public static final int LARGURA = 600;
 	public static final int ALTURA = 400;
 
 	private static Configuracoes config = Configuracoes.getInstancia();
 
-	Logger logger = Logger.getLogger("br.datacoper.view.TelaConfiguracoes");
+	private JTabbedPane jtpTabs = new JTabbedPane();
 
-	JPanel jpTelaConfiguracoes = new JPanel();
+	private JPanel jpTelaConfiguracoes = new JPanel();
+	private JPanel jpTelaAbastecidas = new JPanel();
 
-	Dimension dimensaoTela = Toolkit.getDefaultToolkit().getScreenSize();
+	private JScrollPane scrollPane = new JScrollPane();
+	private JTable tabelaAbastecidas = new JTable();
+	private DefaultTableModel modelo;
 
 	private MyTextField mtfFiltroPrefixo = new MyTextField(LARGURA, "FILTRAR PREFIXO");
 	private MyTextField mtfFiltroExtensao = new MyTextField(LARGURA, "FILTRAR EXTENSAO");
@@ -55,6 +68,9 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	private MyFolderField mffDiretorioImportados = new MyFolderField(LARGURA, "DIRETORIO DESTINO");
 
 	private JButton bntSalvar = new JButton("Salvar");
+
+	Logger logger = Logger.getLogger("br.datacoper.view.TelaConfiguracoes");
+	Dimension dimensaoTela = Toolkit.getDefaultToolkit().getScreenSize();
 
 	/**
 	 * Construtor para a tela de configuraçoes
@@ -75,9 +91,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
 		jpTelaConfiguracoes.setSize(LARGURA, ALTURA);
 		jpTelaConfiguracoes.setLayout(new GridLayout(0, 1));
+		jpTelaAbastecidas.setSize(LARGURA, ALTURA);
+		jpTelaAbastecidas.setLayout(new GridLayout(0, 1));
 
 		this.setLayout(new GridLayout(0, 1));
 		this.carregarParametros();
+
+		modelo = createModel();
 
 		adicionarComponentes();
 	}
@@ -96,7 +116,15 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		jpTelaConfiguracoes.add(mffDiretorioImportados);
 		jpTelaConfiguracoes.add(bntSalvar);
 
-		this.getContentPane().add(jpTelaConfiguracoes, BorderLayout.CENTER);
+		carregarTabela();
+		tabelaAbastecidas.setModel(modelo);
+		scrollPane.setViewportView(tabelaAbastecidas);
+		jpTelaAbastecidas.add(scrollPane);
+
+		jtpTabs.addTab("CONFIGURACOES", jpTelaConfiguracoes);
+		jtpTabs.addTab("ABASTECIDAS", jpTelaAbastecidas);
+
+		this.getContentPane().add(jtpTabs, BorderLayout.CENTER);
 	}
 
 	/**
@@ -229,13 +257,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 		return true;
 	}
 
-	public static TelaConfiguracoes getTela(){
-		if (telaConfiguracoes == null){
+	public static TelaConfiguracoes getTela() {
+		if (telaConfiguracoes == null) {
 			telaConfiguracoes = new TelaConfiguracoes();
 		}
 		return telaConfiguracoes;
 	}
-	
+
 	/**
 	 * Adiciona a açao salvar ao botão
 	 * 
@@ -248,5 +276,68 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 				salvar();
 			}
 		};
+	}
+
+	/**
+	 * Carrega dados de abastecimento na tablea
+	 */
+	public void carregarTabela() {
+
+		ObjectSet<Abastecida> abastecidas = null;
+		modelo = createModel();
+
+		try {
+			Query query = ConexaoBanco.getConexaoBanco().getDatabase().query();
+			query.constrain(Abastecida.class);
+			abastecidas = query.execute();
+
+			while (abastecidas.hasNext()) {
+				Abastecida abastecida = abastecidas.next();
+				if (abastecida != null) {
+					modelo.addRow(new String[] { abastecida.getDataAbastecimento(), abastecida.getHoraAbastecimento(),
+							abastecida.getEncerrante().toString(), abastecida.getFrentista().toString(),
+							abastecida.getNumeroBico().toString(), abastecida.getQuantidade().toString(),
+							abastecida.getStatusHTTP().toString() });
+				}
+			}
+		} catch (Exception e) {
+			logger.error("Erro na consulta de abastecidas no banco");
+		}
+
+		tabelaAbastecidas.setModel(modelo);
+
+		tabelaAbastecidas.getColumnModel().getColumn(0).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(0).setPreferredWidth(95);
+		tabelaAbastecidas.getColumnModel().getColumn(1).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(1).setPreferredWidth(85);
+		tabelaAbastecidas.getColumnModel().getColumn(2).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(2).setPreferredWidth(100);
+		tabelaAbastecidas.getColumnModel().getColumn(3).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(3).setPreferredWidth(70);
+		tabelaAbastecidas.getColumnModel().getColumn(4).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(4).setPreferredWidth(70);
+		tabelaAbastecidas.getColumnModel().getColumn(5).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(5).setPreferredWidth(100);
+		tabelaAbastecidas.getColumnModel().getColumn(6).setResizable(false);
+		tabelaAbastecidas.getColumnModel().getColumn(6).setPreferredWidth(70);
+		tabelaAbastecidas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tabelaAbastecidas.setDefaultEditor(Object.class, null);
+	}
+
+	/**
+	 * Definir modelo da tablea
+	 * 
+	 * @return
+	 */
+	public DefaultTableModel createModel() {
+		return (new DefaultTableModel(new Object[][] {},
+				new String[] { "Data", "Hora", "Encerrante", "Frentista", "Bico", "Quantidade", "Status" }) {
+			Class[] columnTypes = new Class[] { String.class, String.class, String.class, String.class, String.class,
+					String.class, String.class };
+
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
 	}
 }

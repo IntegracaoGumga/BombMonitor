@@ -97,10 +97,8 @@ public class Monitor implements Runnable {
 			Abastecida abastecida = new Abastecida();
 			abastecida.setNumeroBico(Integer.parseInt(line.substring(0, 2)))
 					.setHoraAbastecimento(line.substring(20, 26)).setDataAbastecimento(line.substring(12, 20))
-					.setQuantidade(
-							new BigDecimal(line.substring(32, 40)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
-					.setEncerrante(
-							new BigDecimal(line.substring(49, 61)).divide(MIL).setScale(3, BigDecimal.ROUND_HALF_UP))
+					.setQuantidade(Double.parseDouble(line.substring(32, 40)) / 1000)
+					.setEncerrante(Double.parseDouble(line.substring(49, 61)) / 1000)
 					.setFrentista(Integer.parseInt(line.substring(61, 65))).setArquivo(file);
 
 			logger.info(String.format("Salvando abastecida %s", abastecida.getArquivo()));
