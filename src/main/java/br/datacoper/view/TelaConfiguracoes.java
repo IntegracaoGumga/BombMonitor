@@ -281,6 +281,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	/**
 	 * Carrega dados de abastecimento na tablea
 	 */
+	@SuppressWarnings("unchecked")
 	public void carregarTabela() {
 
 		ObjectSet<Abastecida> abastecidas = null;
@@ -329,9 +330,13 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public DefaultTableModel createModel() {
 		return (new DefaultTableModel(new Object[][] {},
 				new String[] { "Data", "Hora", "Encerrante", "Frentista", "Bico", "Quantidade", "Status" }) {
+
+			private static final long serialVersionUID = 1L;
+
 			Class[] columnTypes = new Class[] { String.class, String.class, String.class, String.class, String.class,
 					String.class, String.class };
 

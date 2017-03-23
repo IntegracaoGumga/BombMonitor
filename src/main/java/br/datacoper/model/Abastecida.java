@@ -1,9 +1,6 @@
 package br.datacoper.model;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 /**
  * @author dread

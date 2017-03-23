@@ -6,11 +6,8 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 
@@ -30,7 +27,6 @@ public class Monitor implements Runnable {
 	private Thread threadMonitor;
 	private String diretorio;
 
-	private static final BigDecimal MIL = new BigDecimal(1000);
 	private static final Integer TAMANHO = Integer
 			.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TAMANHO_LINHA));
 

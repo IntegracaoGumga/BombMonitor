@@ -20,7 +20,6 @@ public class MyFolderField extends javax.swing.JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JButton buttonFind = new JButton("Buscar");
-	private JFileChooser arquivo = new JFileChooser();
 	private JTextField textField = new JTextField();
 
 	/**

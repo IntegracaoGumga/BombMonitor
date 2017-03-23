@@ -7,21 +7,27 @@ import javax.swing.text.PlainDocument;
 
 /**
  * Campo baseado em um JTextField que permite a inserção apenas de numeros
+ * 
  * @author dread
  *
  */
 public class JNumberField extends JTextField {
+	private static final long serialVersionUID = 1L;
+
 	public JNumberField() {
 		this(null);
 	}
 
 	/**
 	 * Receve um texto e valida a inserção caracter a caracter
+	 * 
 	 * @param text
 	 */
 	public JNumberField(String text) {
 		super(text);
 		setDocument(new PlainDocument() {
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void insertString(int offs, String string, AttributeSet attribute) throws BadLocationException {
 				for (int i = 0; i < string.length(); i++) {

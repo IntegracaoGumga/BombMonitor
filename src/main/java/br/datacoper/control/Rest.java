@@ -2,7 +2,6 @@ package br.datacoper.control;
 
 import java.io.File;
 
-import javax.swing.JOptionPane;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;

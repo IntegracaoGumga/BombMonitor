@@ -26,11 +26,12 @@ public class Configuracoes {
 	private static Configuracoes config;
 	private static Boolean valido = false;
 
-	public static final String DIRETORIORAIZ = System.getProperty("user.dir");
-	public static final String DIRETORIOCONFIGURACOES = DIRETORIORAIZ + "/config/";
-	public static final String DIRETORIOIMAGENS = DIRETORIORAIZ + "./src/main/resources/img/";
-	public static final String ARQUIVODECONFIGURACOES = "config.properties";
-	public static final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
+	public final String DIRETORIORAIZ = System.getProperty("user.dir");
+	public final String DIRETORIOCONFIGURACOES = DIRETORIORAIZ + "/config/";
+	public final String DIRETORIOIMAGENS = DIRETORIORAIZ + "./src/main/resources/img/";
+	public final String ARQUIVODECONFIGURACOES = "config.properties";
+	public final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
+
 	public static final String SEPARADOR = System.getProperty("file.separator");
 
 	public static final String PARAM_TEMPO_MONITORAR = "TEMPO_MONITORAR";
@@ -88,7 +89,7 @@ public class Configuracoes {
 			logger.error("Erro ao realizar a leitura do arquivo de configuracoes");
 		}
 
-		this.valido = validarParametros();
+		valido = validarParametros();
 	}
 
 	private boolean validarParametros() {
@@ -213,6 +214,6 @@ public class Configuracoes {
 	}
 
 	public boolean getValido() {
-		return this.valido;
+		return valido;
 	}
 }
