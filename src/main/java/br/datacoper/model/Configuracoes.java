@@ -1,12 +1,16 @@
 package br.datacoper.model;
 
+import java.io.BufferedReader;
 /**
  *
  * @author dread
  */
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -26,12 +30,6 @@ public class Configuracoes {
 	private static Configuracoes config;
 	private static Boolean valido = false;
 
-	public final String DIRETORIORAIZ = System.getProperty("user.dir");
-	public final String DIRETORIOCONFIGURACOES = DIRETORIORAIZ + "/config/";
-	public final String DIRETORIOIMAGENS = DIRETORIORAIZ + "./src/main/resources/img/";
-	public final String ARQUIVODECONFIGURACOES = "config.properties";
-	public final String NOMEABSOLUTOARQUIVOCONFIGURACOES = DIRETORIOCONFIGURACOES + ARQUIVODECONFIGURACOES;
-
 	public static final String SEPARADOR = System.getProperty("file.separator");
 
 	public static final String PARAM_TEMPO_MONITORAR = "TEMPO_MONITORAR";
@@ -41,6 +39,13 @@ public class Configuracoes {
 	public static final String PARAM_FILTRO_EXTENSAO = "FILTRO_EXTENSAO";
 	public static final String PARAM_DIRETORIO_IMPORTACAO = "DIRETORIO_IMPORTACAO";
 	public static final String PARAM_DIRETORIO_IMPORTADOS = "DIRETORIO_IMPORTADOS";
+
+	public static final String DIRETORIO_RAIZ = System.getProperty("user.dir");
+	public static final String DIRETORIO_CONFIGURACOES = DIRETORIO_RAIZ.concat(SEPARADOR).concat("config").concat(SEPARADOR);
+	public static final String DIRETORIO_DATABASE = DIRETORIO_RAIZ.concat(SEPARADOR).concat("database").concat(SEPARADOR);
+	public static final String DIRETORIO_IMAGENS = DIRETORIO_RAIZ.concat("/src/main/resources/img/");
+	public static final String ARQUIVO_DE_CONFIGURACOES = "config.properties";
+	public static final String NOME_ABSOLUTO_ARQUIVO_CONFIGURACOES = DIRETORIO_CONFIGURACOES + ARQUIVO_DE_CONFIGURACOES;
 
 	private Map<String, Object> mapaParametros;
 	private List<String> listaParametros;
@@ -58,11 +63,54 @@ public class Configuracoes {
 		listaParametros.add(PARAM_DIRETORIO_IMPORTACAO);
 		listaParametros.add(PARAM_DIRETORIO_IMPORTADOS);
 
+		File diretorioConfig = new File(DIRETORIO_CONFIGURACOES);
+		if (!diretorioConfig.exists()){
+			diretorioConfig.mkdir();
+		}
+
+		File diretorioDatabase = new File(DIRETORIO_DATABASE);
+		if (!diretorioDatabase.exists()){
+			diretorioDatabase.mkdir();
+		}
+
+		File diretorioLog = new File(DIRETORIO_RAIZ.concat(SEPARADOR).concat("log"));
+		if (!diretorioLog.exists()){
+			diretorioLog.mkdir();
+		}
+		
 		carregarParametros();
-		String log4jConfPath = DIRETORIOCONFIGURACOES + "log4j.properties";
-		PropertyConfigurator.configure(log4jConfPath);
+		carregarArquivoLog4j();
 
 		logger.info("Iniciando leitura do arquivo de configuracoes");
+	}
+
+	private void carregarArquivoLog4j() {
+		File arquivoConfiguracoesApp = new File(DIRETORIO_RAIZ.concat("/src/main/resources/log4j.properties"));
+		File arquivoConfiguracoesLocal = new File(DIRETORIO_RAIZ.concat(SEPARADOR).concat("log4j.properties"));
+
+		try {
+			FileReader fis = new FileReader(arquivoConfiguracoesApp);
+			BufferedReader bufferedReader = new BufferedReader(fis);
+			StringBuilder buffer = new StringBuilder();
+			String line = "";
+
+			while ((line = bufferedReader.readLine()) != null) {
+				buffer.append(line).append("\n");
+			}
+
+			fis.close();
+			bufferedReader.close();
+			FileWriter writer = new FileWriter(arquivoConfiguracoesLocal);
+
+			writer.write(buffer.toString());
+			writer.flush();
+			writer.close();
+			
+			PropertyConfigurator.configure(arquivoConfiguracoesLocal.getAbsolutePath());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public synchronized static Configuracoes getInstancia() {
@@ -76,7 +124,7 @@ public class Configuracoes {
 		Properties propriedades = new Properties();
 		InputStream input;
 		try {
-			input = new FileInputStream(NOMEABSOLUTOARQUIVOCONFIGURACOES);
+			input = new FileInputStream(NOME_ABSOLUTO_ARQUIVO_CONFIGURACOES);
 			propriedades.load(input);
 			this.mapaParametros.clear();
 			for (String param : listaParametros) {
@@ -199,10 +247,10 @@ public class Configuracoes {
 		Properties prop = new Properties();
 		OutputStream output;
 		try {
-			File arquivoPropriedades = new File(NOMEABSOLUTOARQUIVOCONFIGURACOES);
+			File arquivoPropriedades = new File(NOME_ABSOLUTO_ARQUIVO_CONFIGURACOES);
 			if (!arquivoPropriedades.exists())
 				arquivoPropriedades.createNewFile();
-			output = new FileOutputStream(NOMEABSOLUTOARQUIVOCONFIGURACOES);
+			output = new FileOutputStream(NOME_ABSOLUTO_ARQUIVO_CONFIGURACOES);
 			prop.putAll(this.mapaParametros);
 			prop.store(output, "#propriedades");
 			output.flush();

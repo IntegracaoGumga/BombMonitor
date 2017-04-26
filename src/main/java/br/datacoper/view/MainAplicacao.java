@@ -42,7 +42,7 @@ public class MainAplicacao {
 
 		SystemTray tray = SystemTray.getSystemTray();
 		Image image = Toolkit.getDefaultToolkit()
-				.getImage(Configuracoes.getInstancia().DIRETORIOIMAGENS.concat("icon.png"));
+				.getImage(Configuracoes.getInstancia().DIRETORIO_IMAGENS.concat("icon.png"));
 
 		ActionListener exitListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

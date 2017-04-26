@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 
 import br.datacoper.control.Rest;
@@ -27,8 +29,7 @@ public class Monitor implements Runnable {
 	private Thread threadMonitor;
 	private String diretorio;
 
-	private static final Integer TAMANHO = Integer
-			.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TAMANHO_LINHA));
+	private static Integer TAMANHO;
 
 	Logger logger = Logger.getLogger("br.datacoper.model.Monitor");
 
@@ -56,6 +57,11 @@ public class Monitor implements Runnable {
 	 * 
 	 */
 	private void verificarDiretorio(final String dir) {
+		try {
+			TAMANHO = Integer.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TAMANHO_LINHA));
+		} catch (NumberFormatException e) {
+			TAMANHO = 0;
+		}
 		File diretorio = new File(dir);
 		File arquivos[] = diretorio.listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
@@ -92,11 +98,20 @@ public class Monitor implements Runnable {
 		listFile.forEach(line -> {
 			Abastecida abastecida = new Abastecida();
 			abastecida.setNumeroBico(Integer.parseInt(line.substring(0, 2)))
-					.setHoraAbastecimento(line.substring(20, 26)).setDataAbastecimento(line.substring(12, 20))
+					.setHoraAbastecimento(line.substring(20, 26))
+					.setDataAbastecimento(line.substring(12, 20))
 					.setQuantidade(Double.parseDouble(line.substring(32, 40)) / 1000)
 					.setEncerrante(Double.parseDouble(line.substring(49, 61)) / 1000)
-					.setFrentista(Integer.parseInt(line.substring(61, 65))).setArquivo(file);
+//					.setFrentista(Integer.parseInt(line.substring(61, 65)))
+					.setFrentista(null)
+					.setArquivo(file);
 
+			String chave = line.substring(12, 20)
+		                 + line.substring(20, 26)
+		                 + line.substring(0, 2);
+
+			abastecida.setId(Long.parseLong(chave));
+			
 			logger.info(String.format("Salvando abastecida %s", abastecida.getArquivo()));
 
 			Rest.enviarAbastecida(abastecida);

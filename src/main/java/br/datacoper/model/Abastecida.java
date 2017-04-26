@@ -16,6 +16,7 @@ public class Abastecida {
 	private Double encerrante;
 	private Integer numeroBico;
 	private Integer frentista;
+	private Long id;
 
 	@JsonIgnore
 	private String arquivo;
@@ -149,6 +150,22 @@ public class Abastecida {
 	 */
 	public Abastecida setStatusHTTP(final Integer statusHTTP) {
 		this.statusHTTP = statusHTTP;
+		return this;
+	}
+
+	/**
+	 * @return the chaveAbastecimento
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param chaveAbastecimento
+	 *            the chaveAbastecimento to set
+	 */
+	public Abastecida setId(final Long id) {
+		this.id = id;
 		return this;
 	}
 }

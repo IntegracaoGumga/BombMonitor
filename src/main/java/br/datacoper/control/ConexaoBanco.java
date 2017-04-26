@@ -8,6 +8,9 @@ import org.apache.log4j.Logger;
 
 import com.db4o.Db4o;
 import com.db4o.ObjectContainer;
+import com.db4o.config.Configuration;
+
+import br.datacoper.model.Configuracoes;
 
 /**
  * @author dread
@@ -24,7 +27,7 @@ public class ConexaoBanco {
 			Logger logger = Logger.getLogger("br.datacoper.control.ConexaoBanco");
 			logger.info("Iniciando conexao com o banco");
 
-			this.database = Db4o.openFile("./database/abastecimentoDB.yap");
+			this.database = Db4o.openFile(Configuracoes.DIRETORIO_DATABASE.concat("abastecimentoDB.yap"));
 		    Db4o.configure().objectClass(BigDecimal.class);
 
 		} catch (Exception e) {
