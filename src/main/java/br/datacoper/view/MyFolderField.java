@@ -3,6 +3,7 @@ package br.datacoper.view;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -47,6 +48,7 @@ public class MyFolderField extends javax.swing.JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser arquivo = new JFileChooser();
 				arquivo.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				arquivo.setCurrentDirectory(new File(System.getProperty("user.dir")));
 				arquivo.setAcceptAllFileFilterUsed(false);
 				arquivo.showSaveDialog(null);
 				if (arquivo.getSelectedFile() != null) {

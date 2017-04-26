@@ -30,6 +30,7 @@ public class Monitor implements Runnable {
 	private String diretorio;
 
 	private static Integer TAMANHO;
+	private Integer tempoExecucao = 1;
 
 	Logger logger = Logger.getLogger("br.datacoper.model.Monitor");
 
@@ -62,6 +63,7 @@ public class Monitor implements Runnable {
 		} catch (NumberFormatException e) {
 			TAMANHO = 0;
 		}
+
 		File diretorio = new File(dir);
 		File arquivos[] = diretorio.listFiles(new FileFilter() {
 			public boolean accept(File pathname) {
@@ -84,7 +86,7 @@ public class Monitor implements Runnable {
 				}
 			}
 		} catch (NullPointerException e) {
-			logger.error(String.format("Diretorio %s vazio!", dir));
+			logger.error(String.format("Diretorio [%s] vazio!", dir));
 		}
 	}
 
@@ -98,20 +100,16 @@ public class Monitor implements Runnable {
 		listFile.forEach(line -> {
 			Abastecida abastecida = new Abastecida();
 			abastecida.setNumeroBico(Integer.parseInt(line.substring(0, 2)))
-					.setHoraAbastecimento(line.substring(20, 26))
-					.setDataAbastecimento(line.substring(12, 20))
+					.setHoraAbastecimento(line.substring(20, 26)).setDataAbastecimento(line.substring(12, 20))
 					.setQuantidade(Double.parseDouble(line.substring(32, 40)) / 1000)
 					.setEncerrante(Double.parseDouble(line.substring(49, 61)) / 1000)
-//					.setFrentista(Integer.parseInt(line.substring(61, 65)))
-					.setFrentista(null)
-					.setArquivo(file);
+					// .setFrentista(Integer.parseInt(line.substring(61, 65)))
+					.setFrentista(null).setArquivo(file);
 
-			String chave = line.substring(12, 20)
-		                 + line.substring(20, 26)
-		                 + line.substring(0, 2);
+			String chave = line.substring(12, 20) + line.substring(20, 26) + line.substring(0, 2);
 
 			abastecida.setId(Long.parseLong(chave));
-			
+
 			logger.info(String.format("Salvando abastecida %s", abastecida.getArquivo()));
 
 			Rest.enviarAbastecida(abastecida);
@@ -148,8 +146,15 @@ public class Monitor implements Runnable {
 			}
 
 			try {
-				Thread.sleep(1000
-						* Integer.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TEMPO_MONITORAR)));
+				if (Integer.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TEMPO_MONITORAR)) >= 0) {
+					tempoExecucao = Integer
+							.parseInt(Configuracoes.getInstancia().getParam(Configuracoes.PARAM_TEMPO_MONITORAR));
+				}
+			} catch (Exception e) {
+				tempoExecucao = 1;
+			}
+			try {
+				Thread.sleep(1000 * tempoExecucao);
 			} catch (InterruptedException e) {
 				logger.error(String.format("Erro na execuçao da thread: %s", e.getMessage()));
 			} catch (NumberFormatException ex) {

@@ -203,7 +203,10 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 			retorno.add("Tempo para monitoramento do diretorio nao informado!");
 		} else {
 			try {
-				Integer.parseInt(tempoMonitorar);
+				Integer tempo = Integer.parseInt(tempoMonitorar);
+				if (tempo <= 0) {
+					retorno.add("Tempo para monitoramento do diretorio invalido!");
+				}
 			} catch (Exception e) {
 				retorno.add("Tempo para monitoramento do diretorio invalido!");
 			}

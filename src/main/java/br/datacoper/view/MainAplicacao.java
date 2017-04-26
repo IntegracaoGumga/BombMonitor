@@ -37,6 +37,7 @@ public class MainAplicacao {
 			logger.info("Parametros do arquivo invalidos! Abrindo tela para configuracoes.");
 			TelaConfiguracoes.getTela().setVisible(true);
 		}
+		TelaConfiguracoes.getTela().setVisible(true);
 
 		final TrayIcon trayIcon;
 
@@ -46,7 +47,7 @@ public class MainAplicacao {
 
 		ActionListener exitListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				logger.info("Opcao SAIR acionada.");
+				logger.info("Opcao SAIR acionada");
 				System.exit(0);
 			}
 		};
